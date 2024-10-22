@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2316259269922865979
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1687293862758856746, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_Name
+      value: CritNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271133751055819631, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929819379178921627, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929819379178921627, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929819379178921627, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.6745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929819379178921627, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4281479852
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929819379178921627, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: enable3DGame
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: scaleFadeIn.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: scaleFadeIn.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: durationFadeIn
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: editorLastFont
+      value: LiberationSans SDF
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: enableShakeFadeIn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: enableOffsetFadeIn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: shakeOffsetFadeIn.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: shakeOffsetFadeIn.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
+      propertyPath: shakeFrequencyFadeIn
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4ddc0061c80ca245b895bb1fa84c396, type: 3}
