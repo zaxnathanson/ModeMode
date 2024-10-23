@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyShooting : MonoBehaviour
 {
     GameObject player;
     [SerializeField] Stats statsRef;
     [SerializeField] GameObject projectileSpawn;
+    [SerializeField] Animator animator;
+    [SerializeField] NavMeshAgent agent;
+
     float burstTimer = 0;
     float attackSpeedTimer = 0;
     int projectilesBursted =0;
@@ -20,18 +24,72 @@ public class EnemyShooting : MonoBehaviour
     
     void Update()
     {
+        switch (statsRef.shootingStats.type)
+        {
+            case Stats.ShootingStats.ShootType.normal:
+                Shooting();
+                break;
+            case Stats.ShootingStats.ShootType.shootWhileStopped:
+                if (!statsRef.movingStats.isMoving)
+                {
+                    Shooting();
+                }
+                else
+                {
+                    projectilesBursted = 0;
+                }
+                break;
+            case Stats.ShootingStats.ShootType.shootWhileMoving:
+                if (statsRef.movingStats.isMoving)
+                {
+                    Shooting();
+                }
+                else
+                {
+                    projectilesBursted = 0;
+                }
+                break;
+        }
+    }
+
+    void StopWhileShooting()
+    {
+        if (attackSpeedTimer > 1 / statsRef.shootingStats.attackSpeed - statsRef.shootingStats.timeBeforeStopShooting)
+        {
+            statsRef.movingStats.canMove = false;
+        }
+        else
+        {
+            statsRef.movingStats.canMove = true;
+        }
+    }
+
+    void Shooting()
+    {
+
         burstTimer += Time.deltaTime;
 
-        if (attackSpeedTimer > 1 / statsRef.shootingStats.attackSpeed )
-        {W
+        if (statsRef.shootingStats.stopWhileShooting)
+        {
+            StopWhileShooting();
+        }
+
+        if (attackSpeedTimer > 1 / statsRef.shootingStats.attackSpeed)
+        {
             if (projectilesBursted < statsRef.shootingStats.burstAmount)
             {
                 if (burstTimer > 1 / statsRef.shootingStats.burstSpeed)
                 {
                     burstTimer = 0;
                     projectilesBursted++;
-
-                    SpawnBullet();
+                    if (statsRef.shootingStats.animationTrigger != "")
+                    {
+                        animator.SetTrigger(statsRef.shootingStats.animationTrigger);
+                    }
+                    for (int i = 0; i < statsRef.shootingStats.bulletsPerShot; i++)
+                    {
+                        SpawnBullet(i);
+                    }
                 }
                 else
                 {
@@ -50,20 +108,38 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
-    void SpawnBullet()
+    void SpawnBullet(int shotNum)
     {
-        Vector3 spawnPos = new Vector3(projectileSpawn.transform.position.x, 0, projectileSpawn.transform.position.z);
-        rotationZ = Mathf.Atan2(player.transform.position.z, player.transform.position.x) * Mathf.Rad2Deg;
-        projectileSpawn.transform.localRotation = Quaternion.Euler(0, 0, rotationZ);
+        Debug.Log("SpawnBullet");
+        Vector3 spawnPos = new Vector3(statsRef.shootingStats.projectileSpawn[shotNum].transform.position.x, 0, statsRef.shootingStats.projectileSpawn[shotNum].transform.position.z);
+
+        if (statsRef.shootingStats.fixedBurst )
+        {
+            if (projectilesBursted == 1)
+            {
+                rotationZ = Mathf.Atan2(player.transform.position.z - transform.position.z, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+            }
+        }
+        else
+        {
+            rotationZ = Mathf.Atan2(player.transform.position.z - transform.position.z, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg;
+        }
 
         if (statsRef.shootingStats.shootParticle != null)
         {
-            Instantiate(statsRef.shootingStats.shootParticle, projectileSpawn.transform.position, projectileSpawn.transform.rotation, transform);
+            Instantiate(statsRef.shootingStats.shootParticle, projectileSpawn.transform.position, Quaternion.identity, transform);
         }
 
         GameObject newProjectile = Instantiate(statsRef.shootingStats.bulletPrefab, spawnPos, Quaternion.identity);
         Projectile projectileScript = newProjectile.GetComponent<Projectile>();
-        projectileScript.SetupBullet(statsRef.shootingStats, rotationZ);
+
+        Vector3 addedForce = Vector3.zero;
+        if (statsRef.shootingStats.doesMotionEffectVelocity)
+        {
+            addedForce = agent.velocity;
+        }
+
+        projectileScript.SetupBullet(statsRef.shootingStats, rotationZ, shotNum, addedForce);
 
     }
 }

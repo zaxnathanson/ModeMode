@@ -90,6 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
         type: 3}
+      propertyPath: updateDelay
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
+        type: 3}
       propertyPath: enable3DGame
       value: 0
       objectReference: {fileID: 0}

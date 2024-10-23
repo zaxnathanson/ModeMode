@@ -49,10 +49,15 @@ public class Stats : MonoBehaviour
         public float maxSpeed;
         public float acceleration;
         public float decceleration;
+        [HideInInspector] public bool isMoving;
+        [HideInInspector] public bool canMove;
 
         [Header("Enemy Specific")]
+        public bool doesCollisionDamage;
         public Vector2 targetOffset;
         public float stopDistance;
+        public float damage;
+        public bool doesFly;
     }
 
     //Shooting Stats
@@ -69,13 +74,20 @@ public class Stats : MonoBehaviour
         public float damage;
         public float attackSpeed;
         public float range;
+        public float lifetime;
         public float shotSpeed;
         public float spread;
         public float size;
         public int pierceAmount;
-        public float sinMovementAmount;
-        public float sinMovementSpeed;
+        public float acceleration;
+        public bool doesMotionEffectVelocity;
+        //public float knockBack;
+        //public float sinMovementAmount;
+        //public float sinMovementSpeed;
         public GameObject deathGameObject;
+        public GameObject[] projectileSpawn;
+        public int bulletsPerShot;
+        public float[] bulletAngles;
 
         [Header("Aesthetics")]
         [HorizontalLine(color: EColor.Blue)]
@@ -90,9 +102,10 @@ public class Stats : MonoBehaviour
         public bool shootAtPlayer;
         public int burstAmount;
         public float burstSpeed;
-        public int bulletsPerShot;
-        public float[] bulletAngles;
         public float homingAmount;
+        public bool fixedBurst;
+        public bool stopWhileShooting;
+        public float timeBeforeStopShooting;
         public enum ShootType { normal, shootWhileMoving, shootWhileStopped }
         public ShootType type;
 
@@ -143,11 +156,14 @@ public class Stats : MonoBehaviour
                 enemyHealth.currentHealth -= damage;
                 if (isCritical)
                 {
-                    enemyHealth.critNumber.Spawn(transform.position, damage);
+                    Transform num = enemyHealth.critNumber.Spawn(transform.localPosition, damage).transform;
+                    num.position = new Vector3(num.position.x, 0, num.position.z);
                 }
                 else
                 {
-                    enemyHealth.damageNumber.Spawn(transform.position, damage);
+                    Transform num = enemyHealth.damageNumber.Spawn(transform.localPosition, damage).transform;
+                    num.position = new Vector3(num.position.x, 0, num.position.z);
+
                 }
                 break;
 

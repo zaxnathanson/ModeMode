@@ -13,17 +13,26 @@ public class Projectile : MonoBehaviour
     Vector3 startPos;
     [SerializeField] MeshRenderer mr;
     public bool isCritical = false;
-
-    public void SetupBullet(Stats.ShootingStats shootingStats, float rotation)
+    int timesPierced = 0;
+    float lifeTimer = 0;
+    public void SetupBullet(Stats.ShootingStats shootingStats, float rotation, int shotNum, Vector3 addedForce)
     {
         statsRef = shootingStats;
         transform.localScale = Vector3.one * shootingStats.size;
-        transform.rotation = Quaternion.Euler(0, rotation + Random.Range(-statsRef.spread, statsRef.spread), 0);
-        shadow.size = new Vector3(transform.localScale.x, transform.localScale.y, shadow.size.z);
+
+        if (shootingStats.shootAtPlayer)
+        {
+            transform.rotation = Quaternion.Euler(0, rotation + Random.Range(-statsRef.spread, statsRef.spread) + statsRef.bulletAngles[shotNum], 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, Random.Range(-statsRef.spread, statsRef.spread) + statsRef.bulletAngles[shotNum], 0);
+        }
+
         startPos = transform.position;
-        
+
         //calculate critical strike
-        if (Random.Range(0f,100f) <= statsRef.critChance)
+        if (Random.Range(0f, 100f) <= statsRef.critChance)
         {
             isCritical = true;
         }
@@ -31,44 +40,93 @@ public class Projectile : MonoBehaviour
         {
             statsRef.damage *= statsRef.critDamage / 100;
         }
-        
+
         //set color of materials
         MaterialPropertyBlock propertyBlock = new MaterialPropertyBlock();
         propertyBlock.SetColor("_Color", statsRef.outsideColor);
         propertyBlock.SetColor("_BaseColor", statsRef.insideColor);
         mr.SetPropertyBlock(propertyBlock);
 
+        shadow.size = new Vector3(transform.localScale.x, transform.localScale.y, shadow.size.z);
+
         //launches bullet
-        rb.AddForce(statsRef.shotSpeed * new Vector3(transform.right.x, 0, -transform.right.z), ForceMode.Impulse);
+        rb.AddForce(statsRef.shotSpeed * new Vector3(transform.right.x, 0, -transform.right.z) + addedForce, ForceMode.Impulse);
     }
 
+    private void LateUpdate()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
+
+
         shadow.size = new Vector3(transform.localScale.x, transform.localScale.y, shadow.size.z);
         if (Mathf.Abs((startPos - transform.position).magnitude) > statsRef.range)
         {
-            Destroy(gameObject);
+            StartCoroutine(Destroy());
+
         }
+
+        if (statsRef.lifetime > 0)
+        {
+            lifeTimer += Time.deltaTime;
+            if (lifeTimer > statsRef.lifetime)
+            {
+                StartCoroutine(Destroy());
+            }
+        }
+
+        Acceleration();
+        SinMovement();
+    }
+
+    void SinMovement()
+    {
+
+    }
+
+    void Acceleration()
+    {
+        rb.velocity += rb.velocity.normalized * statsRef.acceleration * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy" && statsRef.projectileType == Stats.ShootingStats.ProjectileType.player)
         {
-            other.GetComponent<Stats>().TakeDamage(statsRef.damage, isCritical);
-            StartCoroutine(ProjectileHit());
+            Stats otherStats = other.GetComponent<Stats>();
+            otherStats.TakeDamage(statsRef.damage, isCritical);
+
+            timesPierced++;
+            if (timesPierced > statsRef.pierceAmount)
+            {
+                StartCoroutine(Destroy());
+            }
         }
         if (other.tag == "Player" && statsRef.projectileType == Stats.ShootingStats.ProjectileType.enemy)
         {
             other.GetComponent<Stats>().TakeDamage(statsRef.damage, isCritical);
-            StartCoroutine(ProjectileHit());
+            timesPierced++;
+            if (timesPierced > statsRef.pierceAmount)
+            {
+                StartCoroutine(Destroy());
+            }
         }
     }
 
-    IEnumerator ProjectileHit()
+    IEnumerator Destroy()
     {
         yield return null;
+        if (statsRef.deathParticle != null)
+        {
+            Instantiate(statsRef.deathParticle, transform.position, transform.rotation);
+        }
+        if (statsRef.deathGameObject != null)
+        {
+            Instantiate(statsRef.deathGameObject, transform.position, transform.rotation);
+        }
         Destroy(gameObject) ;
     }
 }

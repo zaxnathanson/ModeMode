@@ -279,7 +279,7 @@ MonoBehaviour:
     toNumber: 100
   durationFadeIn: 0.2
   enableOffsetFadeIn: 1
-  offsetFadeIn: {x: 0.5, y: 0}
+  offsetFadeIn: {x: 0, y: 0}
   enableScaleFadeIn: 1
   scaleFadeIn: {x: 2, y: 2}
   enableCrossScaleFadeIn: 0
@@ -295,8 +295,8 @@ MonoBehaviour:
   enableCrossScaleFadeOut: 0
   crossScaleFadeOut: {x: 1, y: 1.5}
   enableShakeFadeOut: 0
-  shakeOffsetFadeOut: {x: 0, y: 1.5}
-  shakeFrequencyFadeOut: 4
+  shakeOffsetFadeOut: {x: 0, y: 0}
+  shakeFrequencyFadeOut: 0
   enableLerp: 1
   lerpSettings:
     speed: 5
@@ -550,7 +550,7 @@ MonoBehaviour:
   pushSettings:
     radius: 4
     pushOffset: 0.8
-  updateDelay: 0.0125
+  updateDelay: 0
   enablePooling: 0
   poolSize: 50
   disableOnSceneLoad: 1

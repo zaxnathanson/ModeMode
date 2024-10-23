@@ -88,6 +88,7 @@ public class PlayerShooting : MonoBehaviour
         
         GameObject newProjectile = Instantiate(statsRef.shootingStats.bulletPrefab, spawnPos, Quaternion.identity);
         Projectile projectileScript = newProjectile.GetComponent<Projectile>();
-        projectileScript.SetupBullet(statsRef.shootingStats, rotationZ);
+
+        projectileScript.SetupBullet(statsRef.shootingStats, rotationZ, 0, Vector3.zero);
     }
 }
