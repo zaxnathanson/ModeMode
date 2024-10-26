@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Stats statsRef;
     [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer spriteRenderer;
     GameObject player;
     void Start()
     {
@@ -34,6 +35,15 @@ public class EnemyMovement : MonoBehaviour
 
         }
 
+        if (statsRef.movingStats.doesFlip)
+        {
+            FlipSprite();
+        }
+    }
+
+    void FlipSprite()
+    {
+        spriteRenderer.flipX = agent.velocity.x < 0;
 
     }
 
@@ -41,7 +51,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.tag == "Player" && statsRef.movingStats.doesCollisionDamage)
         {
-            other.GetComponent<Stats>().TakeDamage(statsRef.movingStats.damage, false);
+            Stats otherStats = other.GetComponent<Stats>();
+            otherStats.StartCoroutine(otherStats.TakeDamage(statsRef.movingStats.damage, false));
         }
     }
 

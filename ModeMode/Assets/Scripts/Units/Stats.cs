@@ -15,7 +15,10 @@ public class Stats : MonoBehaviour
     public bool doesDash;
     [HideInInspector] bool isDead = false;
     public GameObject deathParticle;
-
+    public Material normalMaterial;
+    public Material hitMaterial;
+    public GameObject hitParticle;
+    public SpriteRenderer spriteRenderer;
 
     //Player Health Stats
     [ShowIf(nameof(unitType), UnitType.enemy)]
@@ -27,6 +30,9 @@ public class Stats : MonoBehaviour
         public float currentHealth;
         public DamageNumber damageNumber;
         public DamageNumber critNumber;
+        public float cameraShakeDuration;
+        public float cameraShakeStrength;
+        public int cameraShakeVibrato;
     }
 
     //Enemy Health Stats
@@ -37,6 +43,7 @@ public class Stats : MonoBehaviour
     {
         public int maxHealth;
         public int currentHealth;
+        public float invincibilityFrames;
     }
 
 
@@ -58,6 +65,9 @@ public class Stats : MonoBehaviour
         public float stopDistance;
         public float damage;
         public bool doesFly;
+        public bool doesFlip;
+
+
     }
 
     //Shooting Stats
@@ -148,7 +158,7 @@ public class Stats : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damage, bool isCritical)
+    public IEnumerator TakeDamage(float damage, bool isCritical)
     {
         switch (unitType)
         {
@@ -163,7 +173,6 @@ public class Stats : MonoBehaviour
                 {
                     Transform num = enemyHealth.damageNumber.Spawn(transform.localPosition, damage).transform;
                     num.position = new Vector3(num.position.x, 0, num.position.z);
-
                 }
                 break;
 
@@ -171,6 +180,14 @@ public class Stats : MonoBehaviour
                 playerHealth.currentHealth -= (int)damage;
                 break;
         }
+        if (hitParticle != null)
+        {
+            Instantiate(hitParticle, transform.position, Quaternion.identity);
+        }
+        spriteRenderer.material = hitMaterial;
+        yield return new WaitForSeconds(0.1f);
+        spriteRenderer.material = normalMaterial;
+
     }
 
     void CheckDeath()
@@ -200,6 +217,7 @@ public class Stats : MonoBehaviour
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);
         }
+        EffectManager.instance.CameraShake(enemyHealth.cameraShakeDuration, enemyHealth.cameraShakeStrength, enemyHealth.cameraShakeVibrato);
         yield return null;
 
         Destroy(gameObject);

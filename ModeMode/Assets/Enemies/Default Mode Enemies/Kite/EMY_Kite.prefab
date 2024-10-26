@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.74
+      value: -2.5809023
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.09916091
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -36,17 +36,17 @@ PrefabInstance:
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -86,8 +86,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 6021059835233609068, guid: cf715a6c546bbc844925b4497b8547b0,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: movingStats.maxSpeed
-      value: 9
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -97,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: movingStats.acceleration
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -107,7 +113,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: movingStats.decceleration
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

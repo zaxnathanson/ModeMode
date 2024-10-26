@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fefee4b89029ea4a8609f92abd11cee, type: 3}
+  m_Name: NormalMode
+  m_EditorClassIdentifier: 
+  enemies: []
+  decorations:
+  - {fileID: 1937281324, guid: 2468aa65bf16d0c47a10edb4271ee8d6, type: 3}
+  - {fileID: -516196715, guid: 2468aa65bf16d0c47a10edb4271ee8d6, type: 3}
+  - {fileID: -1778998992, guid: 2468aa65bf16d0c47a10edb4271ee8d6, type: 3}
+  - {fileID: 925344686, guid: 2468aa65bf16d0c47a10edb4271ee8d6, type: 3}
+  - {fileID: -1544044878, guid: 2468aa65bf16d0c47a10edb4271ee8d6, type: 3}
+  - {fileID: -600626444, guid: 2468aa65bf16d0c47a10edb4271ee8d6, type: 3}
+  - {fileID: -1557465476, guid: 2468aa65bf16d0c47a10edb4271ee8d6, type: 3}
+  numOfDecorations: 20
+  ground: {fileID: 0}
+  approxGroundSize: {x: 20, y: 20}

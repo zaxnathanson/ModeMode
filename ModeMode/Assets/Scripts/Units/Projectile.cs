@@ -97,7 +97,7 @@ public class Projectile : MonoBehaviour
         if (other.tag == "Enemy" && statsRef.projectileType == Stats.ShootingStats.ProjectileType.player)
         {
             Stats otherStats = other.GetComponent<Stats>();
-            otherStats.TakeDamage(statsRef.damage, isCritical);
+            otherStats.StartCoroutine(otherStats.TakeDamage(statsRef.damage, isCritical));
 
             timesPierced++;
             if (timesPierced > statsRef.pierceAmount)
@@ -107,7 +107,9 @@ public class Projectile : MonoBehaviour
         }
         if (other.tag == "Player" && statsRef.projectileType == Stats.ShootingStats.ProjectileType.enemy)
         {
-            other.GetComponent<Stats>().TakeDamage(statsRef.damage, isCritical);
+            Stats otherStats = other.GetComponent<Stats>();
+            otherStats.StartCoroutine(otherStats.TakeDamage(statsRef.damage, isCritical));
+
             timesPierced++;
             if (timesPierced > statsRef.pierceAmount)
             {
@@ -121,7 +123,13 @@ public class Projectile : MonoBehaviour
         yield return null;
         if (statsRef.deathParticle != null)
         {
-            Instantiate(statsRef.deathParticle, transform.position, transform.rotation);
+            GameObject newParticle = Instantiate(statsRef.deathParticle, transform.position, Quaternion.identity);
+            ParticleSystem Particle = newParticle.GetComponent<ParticleSystem>();
+            newParticle.transform.localScale *= statsRef.size;
+            var color = Particle.colorOverLifetime;
+            Gradient grad = new Gradient();
+            grad.SetKeys(new GradientColorKey[] { new GradientColorKey(statsRef.insideColor, 0.0f), new GradientColorKey(statsRef.outsideColor, 1.0f) }, new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(1.0f, 1.0f) });
+            color.color = grad;
         }
         if (statsRef.deathGameObject != null)
         {

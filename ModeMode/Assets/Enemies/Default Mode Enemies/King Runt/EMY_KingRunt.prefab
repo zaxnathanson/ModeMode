@@ -26,7 +26,7 @@ PrefabInstance:
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 3.7575636
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -36,7 +36,7 @@ PrefabInstance:
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.9439268
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -46,17 +46,17 @@ PrefabInstance:
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -96,8 +96,14 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 6021059835233609068, guid: cf715a6c546bbc844925b4497b8547b0,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: shootingStats.size
-      value: 0.26
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -122,7 +128,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: shootingStats.spread
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -142,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: movingStats.stopDistance
-      value: 4.7
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -162,7 +168,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: movingStats.decceleration
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -174,6 +180,12 @@ PrefabInstance:
       propertyPath: shootingStats.burstAmount
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.deathParticle
+      value: 
+      objectReference: {fileID: 2099141342648631360, guid: 026812d7c732e424788aec719581ca31,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
