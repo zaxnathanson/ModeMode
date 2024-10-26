@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EMY_Cloud
       objectReference: {fileID: 0}
+    - target: {fileID: 3341577085123973694, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: -334000983
+      objectReference: {fileID: 0}
     - target: {fileID: 4808171843857410451, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: m_Sprite
@@ -78,6 +83,11 @@ PrefabInstance:
         type: 3}
       propertyPath: shootingStats.size
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: movingStats.doesFly
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}

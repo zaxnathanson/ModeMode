@@ -19,6 +19,7 @@ public class Stats : MonoBehaviour
     public Material hitMaterial;
     public GameObject hitParticle;
     public SpriteRenderer spriteRenderer;
+    public bool isInvincible;
 
     //Player Health Stats
     [ShowIf(nameof(unitType), UnitType.enemy)]
@@ -43,7 +44,6 @@ public class Stats : MonoBehaviour
     {
         public int maxHealth;
         public int currentHealth;
-        public float invincibilityFrames;
     }
 
 
@@ -155,38 +155,74 @@ public class Stats : MonoBehaviour
     private void Update()
     {
         CheckDeath();
-        
     }
 
     public IEnumerator TakeDamage(float damage, bool isCritical)
     {
-        switch (unitType)
+        if (!isInvincible)
         {
-            case UnitType.enemy:
-                enemyHealth.currentHealth -= damage;
-                if (isCritical)
-                {
-                    Transform num = enemyHealth.critNumber.Spawn(transform.localPosition, damage).transform;
-                    num.position = new Vector3(num.position.x, 0, num.position.z);
-                }
-                else
-                {
-                    Transform num = enemyHealth.damageNumber.Spawn(transform.localPosition, damage).transform;
-                    num.position = new Vector3(num.position.x, 0, num.position.z);
-                }
-                break;
+            switch (unitType)
+            {
+                case UnitType.enemy:
 
-            case UnitType.player:
-                playerHealth.currentHealth -= (int)damage;
-                break;
+                    enemyHealth.currentHealth -= damage;
+
+                    if (hitParticle != null)
+                    {
+                        Instantiate(hitParticle, transform.position, Quaternion.identity);
+                    }
+
+                    spriteRenderer.material = hitMaterial;
+                    yield return new WaitForSeconds(0.1f);
+                    spriteRenderer.material = normalMaterial;
+
+                    if (isCritical)
+                    {
+                        Transform num = enemyHealth.critNumber.Spawn(transform.localPosition, damage).transform;
+                        num.position = new Vector3(num.position.x, 0, num.position.z);
+                    }
+                    else
+                    {
+                        Transform num = enemyHealth.damageNumber.Spawn(transform.localPosition, damage).transform;
+                        num.position = new Vector3(num.position.x, 0, num.position.z);
+                    }
+
+                    break;
+
+                case UnitType.player:
+
+                    playerHealth.currentHealth -= (int)damage;
+                    
+                    isInvincible = true;
+                    
+                    if (hitParticle != null)
+                    {
+                        Instantiate(hitParticle, transform.position, Quaternion.identity);
+                    }
+                    spriteRenderer.material = hitMaterial;
+
+                    Time.timeScale = 0;
+                    float elapsed = 0;
+                    while (elapsed < 1)
+                    {
+                        if (elapsed > 0.1f)
+                        {
+                            spriteRenderer.material = normalMaterial;
+                        }
+                        elapsed += Time.unscaledDeltaTime;
+                        Time.timeScale = Mathf.Lerp(0, 1, elapsed);
+                        yield return null;
+                    }
+                    Time.timeScale = 1;
+
+                    isInvincible = false;
+
+                    break;
+            }
+
+
         }
-        if (hitParticle != null)
-        {
-            Instantiate(hitParticle, transform.position, Quaternion.identity);
-        }
-        spriteRenderer.material = hitMaterial;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.material = normalMaterial;
+
 
     }
 
