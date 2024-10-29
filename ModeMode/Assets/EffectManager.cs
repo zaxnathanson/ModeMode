@@ -25,14 +25,12 @@ public class EffectManager : MonoBehaviour
     {
         if (!shakeTween.IsActive())
         {
-            Debug.Log("Stop");
             cameras.transform.localPosition = Vector3.zero;
         }
     }
 
     public void CameraShake(float duration, float strength, int vibrato)
     {
-        Debug.Log("shake");
         shakeTween = cameras.transform.DOShakePosition(duration, strength, vibrato);
     }
 }

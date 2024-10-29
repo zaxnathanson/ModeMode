@@ -16,7 +16,7 @@ public class EnemyShooting : MonoBehaviour
     int projectilesBursted =0;
     float rotationZ;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.FindWithTag("Player");
     }

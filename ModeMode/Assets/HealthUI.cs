@@ -8,7 +8,7 @@ public class HealthUI : MonoBehaviour
     [SerializeField] GameObject healthUIObject;
     Stats statsRef;
     int uiHealth;
-    void Awake()
+    void Start()
     {
         statsRef = GameObject.FindWithTag("Player").GetComponent<Stats>();
 
@@ -24,9 +24,9 @@ public class HealthUI : MonoBehaviour
         {
             Instantiate(healthUIObject, transform);
         }
-        while (transform.childCount > statsRef.playerHealth.maxHealth)
+        for (int i = transform.childCount;  i > statsRef.playerHealth.maxHealth; i--)
         {
-            Destroy(transform.GetChild(transform.childCount - 1).gameObject);
+            Destroy(transform.GetChild(transform.childCount - i).gameObject);
         }
     }
     void ChangeHealth()

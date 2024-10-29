@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: db3a0e7f03eea7241b39818c1e534eb7
+guid: 718dab28b6ca67640a0db22da659cf74
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,70 +110,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UIspritesSmall-export_0
+      name: UISprites_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
+        x: 51
+        y: 34
+        width: 11
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89857416edc21d94faa7c4872d3889e0
-      internalID: -1120574241
+      spriteID: 6dd12bd018f51f2498af9e8ad46e7826
+      internalID: -1944724385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9e4ea14de0eeb34e94604c950d650f2
-      internalID: 1978787256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UIspritesSmall-export_2
+      name: UISprites_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 22
         width: 16
-        height: 16
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46e305d64d1ae2145a9c53c671ee8afd
-      internalID: 1515696822
+      spriteID: 398921d36f6474a4cac72cb27f045bd6
+      internalID: -1320877606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_3
+      name: UISprites_2
       rect:
         serializedVersion: 2
         x: 48
@@ -181,20 +160,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8523a262cb5580242a4adf1ca02916ca
-      internalID: 1958873428
+      spriteID: 75c28f0326e9cfc4ea03ac7086def0af
+      internalID: -1287868681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_4
+      name: UISprites_3
       rect:
         serializedVersion: 2
         x: 64
@@ -202,20 +181,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cb363fc9844778429134202347a8420
-      internalID: 52588791
+      spriteID: fcaf864128609e74c9987ffc19f052e0
+      internalID: 122183500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_5
+      name: UISprites_4
       rect:
         serializedVersion: 2
         x: 80
@@ -223,83 +202,125 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53cdd0640e0690e49bd8c32c2be803e2
-      internalID: -653420570
+      spriteID: 72e1d52d7f00c9a49a01ab9a1f2a40e3
+      internalID: -505447104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_6
+      name: UISprites_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 96
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c1d72112021a634784f7f9482ccb6db
-      internalID: -1042284302
+      spriteID: 883812d77243ada4995b06a73ec27442
+      internalID: -142889679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_7
+      name: UISprites_6
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 112
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11f21c2c23aaa29448398d936c59be10
-      internalID: 820683581
+      spriteID: 3d53aeba7827e8f4aa54f797ad6ffd09
+      internalID: -1608384440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_8
+      name: UISprites_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 338dc046984475f4e9f1de9e88bc1236
+      internalID: 943315248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISprites_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 3
+        width: 18
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bd512560dbf454dbc11e9ef36bc2ae
+      internalID: -1208030570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISprites_10
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 4
         width: 16
-        height: 16
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df34c050152abaf4ebd300d59075d311
-      internalID: 613622999
+      spriteID: d96756c43192b8a4597d5c1df292881c
+      internalID: 1607788324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_9
+      name: UISprites_11
       rect:
         serializedVersion: 2
         x: 48
@@ -307,20 +328,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4628859cd0af5304ebed231c87db18f0
-      internalID: -555453241
+      spriteID: 0d659fb0c7ca8104788267a14f8adbb1
+      internalID: 1162953547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_10
+      name: UISprites_12
       rect:
         serializedVersion: 2
         x: 64
@@ -328,20 +349,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb32bd63d66cf8245a617c16ca3d56c6
-      internalID: 294143182
+      spriteID: 1b3e006851acc9042941012f51efe6af
+      internalID: 1111707655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UIspritesSmall-export_11
+      name: UISprites_13
       rect:
         serializedVersion: 2
         x: 80
@@ -349,14 +370,77 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35c823c87f85d6547a61e84945b1cf9c
-      internalID: 1666328687
+      spriteID: cd7a447a406d35e4b9816224f47d4632
+      internalID: 1497379000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISprites_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04e6df4bcdd85a40815ab25fe31fe7e
+      internalID: 824163751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISprites_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658f199b5a4b80c44938f41e497182df
+      internalID: 1482807739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UISprites_16
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b837dca03774b45983679357c062fa
+      internalID: 549849385
       vertices: []
       indices: 
       edges: []
@@ -364,7 +448,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 31a008e9782ad7c4893d9a6c70f1e66d
+    spriteID: 20c4ecbb1f46f094cb21a7bd1931715f
     internalID: 0
     vertices: []
     indices: 
@@ -372,18 +456,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UIspritesSmall-export_0: -1120574241
-      UIspritesSmall-export_1: 1978787256
-      UIspritesSmall-export_10: 294143182
-      UIspritesSmall-export_11: 1666328687
-      UIspritesSmall-export_2: 1515696822
-      UIspritesSmall-export_3: 1958873428
-      UIspritesSmall-export_4: 52588791
-      UIspritesSmall-export_5: -653420570
-      UIspritesSmall-export_6: -1042284302
-      UIspritesSmall-export_7: 820683581
-      UIspritesSmall-export_8: 613622999
-      UIspritesSmall-export_9: -555453241
+      UISprites_0: -1944724385
+      UISprites_1: -1320877606
+      UISprites_10: 1607788324
+      UISprites_11: 1162953547
+      UISprites_12: 1111707655
+      UISprites_13: 1497379000
+      UISprites_14: 824163751
+      UISprites_15: 1482807739
+      UISprites_16: 549849385
+      UISprites_2: -1287868681
+      UISprites_3: 122183500
+      UISprites_4: -505447104
+      UISprites_5: -142889679
+      UISprites_6: -1608384440
+      UISprites_7: 943315248
+      UISprites_8: -1208030570
+      UISprites_9: -913538641
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

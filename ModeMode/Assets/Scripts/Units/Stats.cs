@@ -34,6 +34,8 @@ public class Stats : MonoBehaviour
         public float cameraShakeDuration;
         public float cameraShakeStrength;
         public int cameraShakeVibrato;
+        public GameObject deathGameobject;
+
     }
 
     //Enemy Health Stats
@@ -44,6 +46,8 @@ public class Stats : MonoBehaviour
     {
         public int maxHealth;
         public int currentHealth;
+        public float hitShakeStrength, hitShakeDuration; 
+        public int hitShakeVibrato;
     }
 
 
@@ -142,11 +146,17 @@ public class Stats : MonoBehaviour
         public float Damage;
         public float TimeToComplete;
         public bool isInvincible;
+        public float dashCooldown;
 
         [Header("Enemy Specific")]
         public float spread;
+        public bool does360;
+        public float forwardRotationOffset;
         public enum DashType { dashToPlayer, dashAtPlayer }
         public DashType type;
+        public float startupTime;
+        public float endTime;
+
         public float burstAmount;
         public float burstSpeed;
     }
@@ -192,7 +202,7 @@ public class Stats : MonoBehaviour
                 case UnitType.player:
 
                     playerHealth.currentHealth -= (int)damage;
-                    
+                    EffectManager.instance.CameraShake(playerHealth.hitShakeDuration, playerHealth.hitShakeStrength, playerHealth.hitShakeVibrato);
                     isInvincible = true;
                     
                     if (hitParticle != null)
@@ -252,6 +262,10 @@ public class Stats : MonoBehaviour
         if (deathParticle != null)
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);
+        }
+        if (enemyHealth.deathGameobject != null)
+        {
+            Instantiate(enemyHealth.deathGameobject, transform.position, Quaternion.identity, GameObject.FindWithTag("EnemyContainer").transform);
         }
         EffectManager.instance.CameraShake(enemyHealth.cameraShakeDuration, enemyHealth.cameraShakeStrength, enemyHealth.cameraShakeVibrato);
         yield return null;

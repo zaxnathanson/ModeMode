@@ -19,21 +19,31 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetAgentSettings();
-        Animation();
-
-
-        if (agent.remainingDistance <= agent.stoppingDistance || agent.isStopped)
+        if (agent.isActiveAndEnabled)
         {
-            agent.acceleration = statsRef.movingStats.decceleration;
-            statsRef.movingStats.isMoving = false;
+            SetAgentSettings();
+            if (agent.remainingDistance <= agent.stoppingDistance || agent.isStopped)
+            {
+                agent.acceleration = statsRef.movingStats.decceleration;
+                statsRef.movingStats.isMoving = false;
+            }
+            else
+            {
+                agent.acceleration = statsRef.movingStats.acceleration;
+                statsRef.movingStats.isMoving = true;
+
+            }
+
         }
         else
         {
-            agent.acceleration = statsRef.movingStats.acceleration;
-            statsRef.movingStats.isMoving = true;
+            statsRef.movingStats.isMoving = false;
 
         }
+
+        Animation();
+
+
 
         if (statsRef.movingStats.doesFlip)
         {
