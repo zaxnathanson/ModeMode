@@ -215,8 +215,9 @@ public class Stats : MonoBehaviour
                     float elapsed = 0;
                     while (elapsed < 1)
                     {
-                        if (elapsed > 0.1f)
+                        if (elapsed > 0.2f)
                         {
+
                             spriteRenderer.material = normalMaterial;
                         }
                         elapsed += Time.unscaledDeltaTime;

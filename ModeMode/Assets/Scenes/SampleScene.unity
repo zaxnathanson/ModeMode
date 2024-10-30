@@ -2210,7 +2210,7 @@ PrefabInstance:
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
       propertyPath: dashingStats.Distance
-      value: 1.8
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
@@ -2220,7 +2220,7 @@ PrefabInstance:
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
       propertyPath: dashingStats.dashCooldown
-      value: 0.24
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
@@ -2277,6 +2277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1567815761}
   - component: {fileID: 1567815762}
+  - component: {fileID: 1567815763}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -2312,6 +2313,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameras: {fileID: 229863792}
+--- !u!114 &1567815763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567815760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72dbbad7d2ce0d0478c9552ddfab341c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMode: {fileID: 0}
 --- !u!1 &1593577049
 GameObject:
   m_ObjectHideFlags: 0

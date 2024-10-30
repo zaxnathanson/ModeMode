@@ -133,7 +133,7 @@ public class Projectile : MonoBehaviour
         }
         if (statsRef.deathGameObject != null)
         {
-            Instantiate(statsRef.deathGameObject, transform.position, transform.rotation);
+            Instantiate(statsRef.deathGameObject, transform.position, Quaternion.identity);
         }
         Destroy(gameObject) ;
     }
