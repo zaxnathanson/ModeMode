@@ -20,6 +20,7 @@ public class Stats : MonoBehaviour
     public GameObject hitParticle;
     public SpriteRenderer spriteRenderer;
     public bool isInvincible;
+    public GameObject exp;
 
     //Player Health Stats
     [ShowIf(nameof(unitType), UnitType.enemy)]
@@ -35,7 +36,7 @@ public class Stats : MonoBehaviour
         public float cameraShakeStrength;
         public int cameraShakeVibrato;
         public GameObject deathGameobject;
-
+        public float baseExpAmount;
     }
 
     //Enemy Health Stats
@@ -48,6 +49,8 @@ public class Stats : MonoBehaviour
         public int currentHealth;
         public float hitShakeStrength, hitShakeDuration; 
         public int hitShakeVibrato;
+        public int healthPerWave;
+
     }
 
 
@@ -78,6 +81,7 @@ public class Stats : MonoBehaviour
     [ShowIf(nameof(doesShoot))]
     public ShootingStats shootingStats;
     [System.Serializable]
+
     public struct ShootingStats
     {
         [Header("General")]
@@ -89,7 +93,8 @@ public class Stats : MonoBehaviour
         public float attackSpeed;
         public float range;
         public float lifetime;
-        public float shotSpeed;
+        public float shotSpeedMin;
+        public float shotSpeedMax;
         public float spread;
         public float size;
         public int pierceAmount;
@@ -149,7 +154,6 @@ public class Stats : MonoBehaviour
         public float dashCooldown;
 
         [Header("Enemy Specific")]
-        public float spread;
         public bool does360;
         public float forwardRotationOffset;
         public enum DashType { dashToPlayer, dashAtPlayer }
@@ -164,7 +168,32 @@ public class Stats : MonoBehaviour
 
     private void Update()
     {
+
         CheckDeath();
+    }
+
+    private void Start()
+    {
+        if (gameObject.tag == "Player")
+        {
+            WaveManager.Instance.nextWave += WaveHeal;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (gameObject.tag == "Player")
+        {
+            WaveManager.Instance.nextWave -= WaveHeal;
+        }
+    }
+
+    void WaveHeal()
+    {
+        if (playerHealth.currentHealth < playerHealth.maxHealth)
+        {
+            playerHealth.currentHealth += playerHealth.healthPerWave;
+        }
     }
 
     public IEnumerator TakeDamage(float damage, bool isCritical)
@@ -271,6 +300,44 @@ public class Stats : MonoBehaviour
         EffectManager.instance.CameraShake(enemyHealth.cameraShakeDuration, enemyHealth.cameraShakeStrength, enemyHealth.cameraShakeVibrato);
         yield return null;
 
+        if (gameObject.tag == "Enemy")
+        {
+            SpawnExp();
+        }
+
         Destroy(gameObject);
+    }
+
+    void SpawnExp()
+    {
+        float expToSpawn = enemyHealth.baseExpAmount * WaveManager.Instance.expMultiplier.Evaluate(WaveManager.Instance.wave);
+        while (expToSpawn > 0)
+        {
+            if (expToSpawn > 20)
+            {
+                GameObject newExp = Instantiate(exp, transform.position, Quaternion.identity);
+                newExp.GetComponent<ExperiencePoint>().SetAmount(20);
+                expToSpawn -= 20;
+            }
+            else if (expToSpawn > 5)
+            {
+                GameObject newExp = Instantiate(exp, transform.position, Quaternion.identity);
+                newExp.GetComponent<ExperiencePoint>().SetAmount(5);
+                expToSpawn -= 5;
+            }
+            else if (expToSpawn > 1)
+            {
+                GameObject newExp = Instantiate(exp, transform.position, Quaternion.identity);
+                newExp.GetComponent<ExperiencePoint>().SetAmount(1);
+                expToSpawn -= 1;
+            }
+            else
+            {
+                GameObject newExp = Instantiate(exp, transform.position, Quaternion.identity);
+                newExp.GetComponent<ExperiencePoint>().SetAmount(expToSpawn);
+                expToSpawn = 0;
+            }
+        }
+        return;
     }
 }

@@ -7,10 +7,7 @@ public class Mode : ScriptableObject
 {
 
     public Enemy[] foundational;
-    public Enemy[] common;
-    public Enemy[] uncommon;
-    public Enemy[] rare;
-    public Enemy[] legendary;
+    public Enemy[] other;
 
 
     public Sprite[] decorations;

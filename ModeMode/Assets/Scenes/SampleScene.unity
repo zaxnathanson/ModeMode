@@ -233,7 +233,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 118
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -2209,13 +2209,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
+      propertyPath: doesMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
+        type: 3}
       propertyPath: dashingStats.Distance
       value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
       propertyPath: playerHealth.maxHealth
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
@@ -2224,13 +2229,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
+      propertyPath: shootingStats.attackSpeed
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
+        type: 3}
       propertyPath: shootingStats.reloadSpeed
-      value: 0.75
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
+        type: 3}
+      propertyPath: shootingStats.shotSpeed.x
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
+        type: 3}
+      propertyPath: shootingStats.shotSpeed.y
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
       propertyPath: playerHealth.currentHealth
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
+        type: 3}
+      propertyPath: playerHealth.healthPerWave
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
+        type: 3}
+      propertyPath: shootingStats.shotSpeedMax
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
+        type: 3}
+      propertyPath: shootingStats.shotSpeedMin
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
@@ -2325,7 +2360,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dbbad7d2ce0d0478c9552ddfab341c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMode: {fileID: 0}
+  currentMode: {fileID: 11400000, guid: 0c9438bb3ed3dae4f9ea255670c9ffdf, type: 2}
+  player: {fileID: 0}
+  foundationalEnemyChance: 22
+  enemyAmountCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 5.2048926
+      outSlope: 5.2048926
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10242418
+    - serializedVersion: 3
+      time: 8
+      value: 15
+      inSlope: 0.28089803
+      outSlope: 0.28089803
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.8931512
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  enemyScreenMax:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 4
+      inSlope: 1.08257
+      outSlope: 1.08257
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.25295776
+    - serializedVersion: 3
+      time: 16
+      value: 10
+      inSlope: 0.1342413
+      outSlope: 0.1342413
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.7083174
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spawnCooldownCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 5
+      inSlope: -0.67646474
+      outSlope: -0.67646474
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.37872687
+    - serializedVersion: 3
+      time: 20
+      value: 0.9
+      inSlope: -0.008522872
+      outSlope: -0.008522872
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5406393
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  expMultiplier:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.06181414
+      outSlope: 0.06181414
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.6292318
+    - serializedVersion: 3
+      time: 20
+      value: 30
+      inSlope: 4.2600226
+      outSlope: 4.2600226
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3467002
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  wave: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1593577049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2754,7 +2891,7 @@ MonoBehaviour:
   m_LayerMask:
     serializedVersion: 2
     m_Bits: 62
-  m_UseGeometry: 0
+  m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
@@ -2981,6 +3118,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2987532092368178137, guid: 15acbd5af079e584e92b62cef540d934,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2987532092368178137, guid: 15acbd5af079e584e92b62cef540d934,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2987532092368178137, guid: 15acbd5af079e584e92b62cef540d934,
         type: 3}
       propertyPath: m_LocalPosition.x

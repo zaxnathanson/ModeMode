@@ -2,12 +2,14 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EffectManager : MonoBehaviour
 {
     public static EffectManager instance;
     public GameObject cameras;
     Tween shakeTween;
+
     void Awake()
     {
         if (instance == null)
@@ -26,6 +28,12 @@ public class EffectManager : MonoBehaviour
         if (!shakeTween.IsActive())
         {
             cameras.transform.localPosition = Vector3.zero;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

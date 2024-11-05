@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.maxHealth
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -162,8 +162,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: enemyHealth.baseExpAmount
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: enemyHealth.currentHealth
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -179,6 +184,16 @@ PrefabInstance:
         type: 3}
       propertyPath: shootingStats.burstAmount
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shotSpeedMax
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shotSpeedMin
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}

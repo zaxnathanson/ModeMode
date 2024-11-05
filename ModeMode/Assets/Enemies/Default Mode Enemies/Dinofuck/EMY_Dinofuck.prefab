@@ -118,7 +118,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.maxHealth
-      value: 28
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -147,8 +147,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: enemyHealth.baseExpAmount
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: enemyHealth.currentHealth
-      value: 28
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -167,8 +172,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: shootingStats.shotSpeed.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shotSpeed.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: shootingStats.acceleration
-      value: -7
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shotSpeedMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shotSpeedMin
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}

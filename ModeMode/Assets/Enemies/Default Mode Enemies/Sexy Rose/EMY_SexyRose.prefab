@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3026777592126794255
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2068940259458552784, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c26517bbc36d3ca4ab7a9a8bb56b1bfb, type: 2}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.9569767
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.0096972
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908092864908704958, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3274831666054252852, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_Name
+      value: EMY_SexyRose
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808171843857410451, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1766530407, guid: 0a349cdb442ee294c8b006a13b1e91e7,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 6021059835233609068, guid: cf715a6c546bbc844925b4497b8547b0,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.size
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: movingStats.doesFlip
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: movingStats.maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: enemyHealth.maxHealth
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.lifetime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shotSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: movingStats.acceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.burstSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: enemyHealth.baseExpAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: enemyHealth.currentHealth
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: movingStats.decceleration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.attackSpeed
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.burstAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.acceleration
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shotSpeedMax
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shotSpeedMin
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.deathParticle
+      value: 
+      objectReference: {fileID: 2099141342648631360, guid: 026812d7c732e424788aec719581ca31,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.animationTrigger
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.stopWhileShooting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.timeBeforeStopShooting
+      value: 0.6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94f92c178cc094648a30c000c1d155b5, type: 3}

@@ -171,6 +171,7 @@ MonoBehaviour:
     type: 3}
   spriteRenderer: {fileID: 4808171843857410451}
   isInvincible: 0
+  exp: {fileID: 9060492564570091574, guid: f47f9c0b37aa88d43962e30c5bdd67a3, type: 3}
   enemyHealth:
     maxHealth: 0
     currentHealth: 0
@@ -181,6 +182,8 @@ MonoBehaviour:
     cameraShakeDuration: 0.2
     cameraShakeStrength: 0.5
     cameraShakeVibrato: 5
+    deathGameobject: {fileID: 0}
+    baseExpAmount: 0
   playerHealth:
     maxHealth: 0
     currentHealth: 0
@@ -207,7 +210,8 @@ MonoBehaviour:
     attackSpeed: 0
     range: 0
     lifetime: 0
-    shotSpeed: 0
+    shotSpeedMin: 0
+    shotSpeedMax: 0
     spread: 0
     size: 0
     pierceAmount: 0
@@ -244,8 +248,11 @@ MonoBehaviour:
     TimeToComplete: 0
     isInvincible: 0
     dashCooldown: 0
-    spread: 0
+    does360: 0
+    forwardRotationOffset: 0
     type: 0
+    startupTime: 0
+    endTime: 0
     burstAmount: 0
     burstSpeed: 0
 --- !u!195 &3341577085123973694

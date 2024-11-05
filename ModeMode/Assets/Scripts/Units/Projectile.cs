@@ -50,7 +50,7 @@ public class Projectile : MonoBehaviour
         shadow.size = new Vector3(transform.localScale.x, transform.localScale.y, shadow.size.z);
 
         //launches bullet
-        rb.AddForce(statsRef.shotSpeed * new Vector3(transform.right.x, 0, -transform.right.z) + addedForce, ForceMode.Impulse);
+        rb.AddForce(Random.Range(statsRef.shotSpeedMin, statsRef.shotSpeedMax) * new Vector3(transform.right.x, 0, -transform.right.z) + addedForce, ForceMode.Impulse);
     }
 
     private void LateUpdate()

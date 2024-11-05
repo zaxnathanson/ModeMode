@@ -78,11 +78,11 @@ public class EnemyDashing : MonoBehaviour
         
         if (statsRef.dashingStats.does360)
         {
-            dashTween = sprites.transform.DOLocalRotate(new Vector3(45, 0, rotationZ + statsRef.dashingStats.forwardRotationOffset + 360 + Random.Range(-statsRef.dashingStats.spread, statsRef.dashingStats.spread)), statsRef.dashingStats.startupTime, RotateMode.FastBeyond360);
+            dashTween = sprites.transform.DOLocalRotate(new Vector3(45, 0, rotationZ + statsRef.dashingStats.forwardRotationOffset + 360 ), statsRef.dashingStats.startupTime, RotateMode.FastBeyond360);
         }
         else
         {
-            dashTween = sprites.transform.DOLocalRotate(new Vector3(45, 0, rotationZ + statsRef.dashingStats.forwardRotationOffset + Random.Range(-statsRef.dashingStats.spread, statsRef.dashingStats.spread)), statsRef.dashingStats.startupTime, RotateMode.FastBeyond360);
+            dashTween = sprites.transform.DOLocalRotate(new Vector3(45, 0, rotationZ + statsRef.dashingStats.forwardRotationOffset ), statsRef.dashingStats.startupTime, RotateMode.FastBeyond360);
         }
         yield return dashTween.WaitForCompletion();
 
