@@ -22,6 +22,7 @@ public class Stats : MonoBehaviour
     public bool isInvincible;
     public GameObject exp;
     public GameObject upgradeCapasulePrefab;
+    public float luck;
 
 
     [ShowIf(nameof(unitType), UnitType.player)]

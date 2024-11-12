@@ -1585,6 +1585,74 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1001 &816321431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.0854335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.50895596
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5951840101731839648, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318614087248960298, guid: 071ed35a71c92374683d97f15f4b62f2,
+        type: 3}
+      propertyPath: m_Name
+      value: EMY_Marigold
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 071ed35a71c92374683d97f15f4b62f2, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,6 +3124,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
+      propertyPath: luck
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
+        type: 3}
       propertyPath: doesDash
       value: 1
       objectReference: {fileID: 0}
@@ -3087,7 +3160,7 @@ PrefabInstance:
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
       propertyPath: playerSpecific.capsules
-      value: 0
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 7933181716306390221, guid: 984f7d4d071d34747949deb2189bfb82,
         type: 3}
@@ -4368,3 +4441,4 @@ SceneRoots:
   - {fileID: 1567815761}
   - {fileID: 1551306368}
   - {fileID: 593443558}
+  - {fileID: 816321431}

@@ -72,7 +72,7 @@ public class WaveManager : MonoBehaviour
         {
             wave++;
             enemiesSpawnedThisWave = 0;
-            Debug.Log("nextWave");
+            Debug.Log("playerShoot");
             nextWave?.Invoke();
         }
     }

@@ -17,6 +17,10 @@ public class PlayerShooting : MonoBehaviour
 
     [HideInInspector] public float reloadTimer = 0;
     float attackSpeedTimer = 0;
+
+    public delegate void ShootEvent();
+    public ShootEvent playerShoot;
+
     void Start()
     {
         gunStartPosX = weapon.transform.position.x;
@@ -60,6 +64,7 @@ public class PlayerShooting : MonoBehaviour
                 statsRef.shootingStats.ammo--;
 
 
+                playerShoot?.Invoke();
 
                 SpawnBullet();
             }
@@ -77,7 +82,7 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    void SpawnBullet()
+    public void SpawnBullet()
     {
         Vector3 spawnPos = new Vector3(projectileSpawn.transform.position.x, 0, projectileSpawn.transform.position.z);
         
