@@ -15,7 +15,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] GameObject projectileSpawn;
     float rotationZ;
 
-    float reloadTimer = 0;
+    [HideInInspector] public float reloadTimer = 0;
     float attackSpeedTimer = 0;
     void Start()
     {

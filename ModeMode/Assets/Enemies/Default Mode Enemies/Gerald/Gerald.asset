@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 532690047873908327, guid: 0a1fc39d77d4d704191428007da6931c, type: 3}
   cost: 1
-  weight: 8
-  firstWave: 0
+  weight: 15
+  firstWave: 1

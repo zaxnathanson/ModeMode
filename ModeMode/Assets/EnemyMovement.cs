@@ -53,8 +53,14 @@ public class EnemyMovement : MonoBehaviour
 
     void FlipSprite()
     {
-        spriteRenderer.flipX = agent.velocity.x < 0;
-
+        if (statsRef.movingStats.isMoving)
+        {
+            spriteRenderer.flipX = agent.velocity.x < 0;
+        }
+        else
+        {
+            spriteRenderer.flipX = player.transform.position.x - transform.position.x < 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

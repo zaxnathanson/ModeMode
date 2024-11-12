@@ -13,9 +13,12 @@ public class ExperiencePoint : MonoBehaviour
     [SerializeField] GameObject expGet, expCollected;
     [SerializeField] float upForceMax, upForceMin;
     [SerializeField] float sideForce;
+    [SerializeField] float lifetime, warningLifetime;
+    float lifetimeTimer = 0;
     public float Amount;
     [SerializeField] Sprite large, medium, small;
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Animator animator;
 
 
     private void Awake()
@@ -32,18 +35,18 @@ public class ExperiencePoint : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            StartCoroutine(Collect());
+            Collect(other.gameObject);
         }
     }
 
     public void SetAmount(float value)
     {
         Amount = value;
-        if (Amount >= 20)
+        if (Amount >= 15)
         {
             spriteRenderer.sprite = large;
         }
-        else if (Amount >= 5)
+        else if (Amount >= 3)
         {
             spriteRenderer.sprite = medium;
         }
@@ -54,10 +57,10 @@ public class ExperiencePoint : MonoBehaviour
         return;
     }
 
-    IEnumerator Collect()
+    void Collect(GameObject player)
     {
-        yield return null;
-        Instantiate(expGet, transform.position, Quaternion.identity);
+        Instantiate(expGet, player.transform.position, Quaternion.identity);
+        player.GetComponent<Stats>().GetEXP(Amount);
         Destroy(gameObject);
     }
 
@@ -79,6 +82,19 @@ public class ExperiencePoint : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(targetPlayer.transform.position.x, 0.4f, targetPlayer.transform.position.z), Time.deltaTime * movementSpeed);
             movementSpeed += Time.deltaTime * movementSpeedIncrease;
         }
+        else
+        {
+            lifetimeTimer += Time.deltaTime;
+            if (lifetimeTimer > warningLifetime)
+            {
+                animator.SetBool("isBlinking", true);
+            }
+            if (lifetimeTimer > lifetime)
+            {
+                Destroy(gameObject);
+            }
+        }
 
+        
     }
 }

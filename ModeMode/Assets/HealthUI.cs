@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,10 +37,17 @@ public class HealthUI : MonoBehaviour
             if (i < statsRef.playerHealth.currentHealth)
             {
                 transform.GetChild(i).GetChild(0).GetComponent<Image>().enabled = true;
+
             }
             else
             {
                 transform.GetChild(i).GetChild(0).GetComponent<Image>().enabled = false;
+                Debug.Log(i);
+                Debug.Log(statsRef.playerHealth.currentHealth);
+                if (i == statsRef.playerHealth.currentHealth)
+                {
+                    transform.GetChild(i).GetComponent<RectTransform>().DOPunchScale(Vector3.one * 0.3f, 0.2f);
+                }
             }
         }
     }

@@ -21,6 +21,24 @@ public class Stats : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public bool isInvincible;
     public GameObject exp;
+    public GameObject upgradeCapasulePrefab;
+
+
+    [ShowIf(nameof(unitType), UnitType.player)]
+    public PlayerSpecific playerSpecific;
+    [System.Serializable]
+    public struct PlayerSpecific
+    {
+        public float currentExp;
+        public AnimationCurve expCurve;
+        public int currentLevel;
+        public float expMultiplier;
+        public int capsules;
+        public GameObject levelUpParticle;
+        public float capsuleRange;
+        public float capsuleSpeed;
+    }
+
 
     //Player Health Stats
     [ShowIf(nameof(unitType), UnitType.enemy)]
@@ -28,6 +46,8 @@ public class Stats : MonoBehaviour
     [System.Serializable]
     public struct EnemyHealth
     {
+        public Sprite icon;
+        public string script;
         public float maxHealth;
         public float currentHealth;
         public DamageNumber damageNumber;
@@ -168,7 +188,11 @@ public class Stats : MonoBehaviour
 
     private void Update()
     {
-
+        if (gameObject.tag == "Player")
+        {
+            CheckLevels();
+        }
+            
         CheckDeath();
     }
 
@@ -186,6 +210,35 @@ public class Stats : MonoBehaviour
         {
             WaveManager.Instance.nextWave -= WaveHeal;
         }
+    }
+
+
+    public void Captured()
+    {
+        GameObject upgradeCapsule = Instantiate(upgradeCapasulePrefab,transform.position, Quaternion.identity);
+        upgradeCapsule.GetComponent<UpgradePickup>().Setup(enemyHealth.icon, enemyHealth.script);
+        Destroy(gameObject);
+    }
+
+    void CheckLevels()
+    {
+        if (playerSpecific.currentExp >= playerSpecific.expCurve.Evaluate(playerSpecific.currentLevel))
+        {
+            float leftoverEXP = playerSpecific.currentExp - playerSpecific.expCurve.Evaluate(playerSpecific.currentLevel);
+            playerSpecific.currentLevel++;
+            playerSpecific.currentExp = leftoverEXP;
+            playerSpecific.capsules++;
+            if (playerSpecific.levelUpParticle != null)
+            {
+                Instantiate(playerSpecific.levelUpParticle, transform.position, playerSpecific.levelUpParticle.transform.rotation, transform);
+            }
+            EffectManager.instance.StartCoroutine(EffectManager.instance.ScreenFade(Color.white, 0.2f, 0f, 0.05f, 0.05f));
+        }
+    }
+
+    public void GetEXP(float baseAmount)
+    {
+        playerSpecific.currentExp += baseAmount * playerSpecific.expMultiplier;
     }
 
     void WaveHeal()
@@ -232,6 +285,9 @@ public class Stats : MonoBehaviour
 
                     playerHealth.currentHealth -= (int)damage;
                     EffectManager.instance.CameraShake(playerHealth.hitShakeDuration, playerHealth.hitShakeStrength, playerHealth.hitShakeVibrato);
+
+                    StartCoroutine(EffectManager.instance.CameraZoom(0.4f, 0.5f));
+
                     isInvincible = true;
                     
                     if (hitParticle != null)
@@ -240,20 +296,11 @@ public class Stats : MonoBehaviour
                     }
                     spriteRenderer.material = hitMaterial;
 
-                    Time.timeScale = 0;
-                    float elapsed = 0;
-                    while (elapsed < 1)
-                    {
-                        if (elapsed > 0.2f)
-                        {
+                    yield return new WaitForSeconds(0.2f);
 
-                            spriteRenderer.material = normalMaterial;
-                        }
-                        elapsed += Time.unscaledDeltaTime;
-                        Time.timeScale = Mathf.Lerp(0, 1, elapsed);
-                        yield return null;
-                    }
-                    Time.timeScale = 1;
+                    spriteRenderer.material = normalMaterial;
+
+                    yield return new WaitForSeconds(0.2f);
 
                     isInvincible = false;
 
@@ -313,23 +360,17 @@ public class Stats : MonoBehaviour
         float expToSpawn = enemyHealth.baseExpAmount * WaveManager.Instance.expMultiplier.Evaluate(WaveManager.Instance.wave);
         while (expToSpawn > 0)
         {
-            if (expToSpawn > 20)
+            if (expToSpawn > 15)
             {
                 GameObject newExp = Instantiate(exp, transform.position, Quaternion.identity);
                 newExp.GetComponent<ExperiencePoint>().SetAmount(20);
-                expToSpawn -= 20;
+                expToSpawn -= 15;
             }
-            else if (expToSpawn > 5)
+            else if (expToSpawn > 3)
             {
                 GameObject newExp = Instantiate(exp, transform.position, Quaternion.identity);
                 newExp.GetComponent<ExperiencePoint>().SetAmount(5);
-                expToSpawn -= 5;
-            }
-            else if (expToSpawn > 1)
-            {
-                GameObject newExp = Instantiate(exp, transform.position, Quaternion.identity);
-                newExp.GetComponent<ExperiencePoint>().SetAmount(1);
-                expToSpawn -= 1;
+                expToSpawn -= 3;
             }
             else
             {

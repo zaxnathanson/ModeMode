@@ -82,6 +82,17 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: enemyHealth.icon
+      value: 
+      objectReference: {fileID: 1470072503, guid: 4f39c4ce80cb3de4a962f2d542d47044,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: enemyHealth.script
+      value: RoseUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: shootingStats.size
       value: 1.2
       objectReference: {fileID: 0}

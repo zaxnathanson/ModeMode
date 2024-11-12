@@ -15,7 +15,7 @@ public class EnemyShooting : MonoBehaviour
     float attackSpeedTimer = 0;
     int projectilesBursted =0;
     float rotationZ;
-
+    bool hasStopAttackAnimation = false;
     void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -24,32 +24,36 @@ public class EnemyShooting : MonoBehaviour
     
     void Update()
     {
-        switch (statsRef.shootingStats.type)
+        if (statsRef.doesShoot)
         {
-            case Stats.ShootingStats.ShootType.normal:
-                Shooting();
-                break;
-            case Stats.ShootingStats.ShootType.shootWhileStopped:
-                if (!statsRef.movingStats.isMoving)
-                {
+            switch (statsRef.shootingStats.type)
+            {
+                case Stats.ShootingStats.ShootType.normal:
                     Shooting();
-                }
-                else
-                {
-                    projectilesBursted = 0;
-                }
-                break;
-            case Stats.ShootingStats.ShootType.shootWhileMoving:
-                if (statsRef.movingStats.isMoving)
-                {
-                    Shooting();
-                }
-                else
-                {
-                    projectilesBursted = 0;
-                }
-                break;
+                    break;
+                case Stats.ShootingStats.ShootType.shootWhileStopped:
+                    if (!statsRef.movingStats.isMoving)
+                    {
+                        Shooting();
+                    }
+                    else
+                    {
+                        projectilesBursted = 0;
+                    }
+                    break;
+                case Stats.ShootingStats.ShootType.shootWhileMoving:
+                    if (statsRef.movingStats.isMoving)
+                    {
+                        Shooting();
+                    }
+                    else
+                    {
+                        projectilesBursted = 0;
+                    }
+                    break;
+            }
         }
+
     }
 
     void StopWhileShooting()
@@ -57,10 +61,17 @@ public class EnemyShooting : MonoBehaviour
         if (attackSpeedTimer > 1 / statsRef.shootingStats.attackSpeed - statsRef.shootingStats.timeBeforeStopShooting)
         {
             statsRef.movingStats.canMove = false;
+            if (statsRef.shootingStats.animationTrigger != "" && !hasStopAttackAnimation)
+            {
+                animator.SetTrigger(statsRef.shootingStats.animationTrigger);
+                hasStopAttackAnimation = true;
+            }
         }
         else
         {
             statsRef.movingStats.canMove = true;
+            hasStopAttackAnimation = false;
+
         }
     }
 
@@ -82,7 +93,8 @@ public class EnemyShooting : MonoBehaviour
                 {
                     burstTimer = 0;
                     projectilesBursted++;
-                    if (statsRef.shootingStats.animationTrigger != "")
+
+                    if (statsRef.shootingStats.animationTrigger != "" && !statsRef.shootingStats.stopWhileShooting)
                     {
                         animator.SetTrigger(statsRef.shootingStats.animationTrigger);
                     }
@@ -110,7 +122,7 @@ public class EnemyShooting : MonoBehaviour
 
     void SpawnBullet(int shotNum)
     {
-        Debug.Log("SpawnBullet");
+        Debug.Log("SpawnCapsule");
         Vector3 spawnPos = new Vector3(statsRef.shootingStats.projectileSpawn[shotNum].transform.position.x, 0, statsRef.shootingStats.projectileSpawn[shotNum].transform.position.z);
 
         if (statsRef.shootingStats.fixedBurst )

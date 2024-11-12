@@ -15,3 +15,4 @@ MonoBehaviour:
   unit: {fileID: 2355329911155844114, guid: 7de24bb311eae974f952422d800102f3, type: 3}
   cost: 0
   weight: 3
+  firstWave: 1

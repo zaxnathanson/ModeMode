@@ -169,18 +169,20 @@ public class WaveManager : MonoBehaviour
             weights[n] /= totalWeight;
             weights[n] *= 100;
         }
-
-        float randomEnemy = Random.Range(0f, 100f);
+        
         float randomTotal = 0;
         int enemyIndex = 0;
         do
         {
+            float randomEnemy = Random.Range(0f, 100f);
+
             for (int n = 0; n < weights.Length; n++)
             {
                 randomTotal += weights[n];
                 if (randomTotal > randomEnemy)
                 {
                     enemyIndex = n;
+                    randomTotal = 0;
                     break;
                 }
             }

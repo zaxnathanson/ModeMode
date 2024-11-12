@@ -22,7 +22,7 @@ public class AmmoUI : MonoBehaviour
         }
         for (int i = transform.childCount - 2; i > statsRef.shootingStats.ammo; i--)
         {
-            Debug.Log("Destroy");
+            Debug.Log("DestroyCapsule");
             Destroy(transform.GetChild(transform.childCount - i - 1).gameObject);
         }
     }
