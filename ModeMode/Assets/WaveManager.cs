@@ -30,7 +30,7 @@ public class WaveManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
     }
 
-    // Update is called once per frame
+    // CallUpdate is called once per frame
     void Update()
     {
         SpawnCooldown();

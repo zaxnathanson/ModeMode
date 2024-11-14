@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6209d59797100e54f96e46cc9cae4ce5, type: 3}
+  m_Name: AlarmUpgrade
+  m_EditorClassIdentifier: 
+  statsRef: {fileID: 0}
+  effectText: {fileID: 0}
+  AttackSpeedBonusDuration: 0.4
+  AttackSpeedBonusIncrease: 1.5
+  eAttackSpeedBonusIncrease: 0.3

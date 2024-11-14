@@ -26,7 +26,7 @@ public class EffectManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    // CallUpdate is called once per frame
     void Update()
     {
         if (!shakeTween.IsActive())

@@ -86,9 +86,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: enemyHealth.icon
+      value: 
+      objectReference: {fileID: -2053255747, guid: 4f39c4ce80cb3de4a962f2d542d47044,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: enemyHealth.script
-      value: GoldKeyUpgrade
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: 570242515c4c1f94389c791eea872b53,
+        type: 2}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: dashingStats.Damage

@@ -13,7 +13,7 @@ public class CapsuleUI : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // CallUpdate is called once per frame
     void Update()
     {   
         text.text = playerStats.playerSpecific.capsules.ToString();

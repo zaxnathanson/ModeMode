@@ -15,7 +15,7 @@ public class CapsuleThrow : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // CallUpdate is called once per frame
     void Update()
     {
         Shooting();

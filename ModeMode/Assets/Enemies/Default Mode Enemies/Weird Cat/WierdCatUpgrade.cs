@@ -2,22 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Upgrades/FlowerUpgrade")]
-public class FlowerUpgrade : Upgrade
+[CreateAssetMenu(menuName = "Upgrades/WeirdCatUpgrade")]
+public class WierdCatUpgrade : Upgrade
 {
     int currentNumUpgrades = 0;
-    public float AttackSpeedIncrease = 0.8f;
-    public float eAttackSpeedIncrease = 0.5f;
+    public float luckIncrease = 0.5f;
+    public float eLuckIncrease = 0.5f;
 
     public override void Setup(UpgradeHandler ctx)
     {
         currentNumUpgrades = 0;
-
         base.Setup(ctx);
-        Debug.Log("lol");
         statsRef = upgradeHandler.gameObject.GetComponent<Stats>();
-
-        statsRef.shootingStats.attackSpeed += AttackSpeedIncrease;
+        statsRef.luck += luckIncrease;
     }
 
     public override void CallUpdate(float deltaTime)
@@ -31,6 +28,6 @@ public class FlowerUpgrade : Upgrade
 
     void AddStat()
     {
-        statsRef.shootingStats.attackSpeed += eAttackSpeedIncrease;
+        statsRef.luck += eLuckIncrease;
     }
 }

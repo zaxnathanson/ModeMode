@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
         statsRef.movingStats.canMove = true;
     }
 
-    // Update is called once per frame
+    // CallUpdate is called once per frame
     void Update()
     {
         if (agent.isActiveAndEnabled)
@@ -42,12 +42,36 @@ public class EnemyMovement : MonoBehaviour
         }
 
         Animation();
-
+        Rest();
 
 
         if (statsRef.movingStats.doesFlip)
         {
             FlipSprite();
+        }
+    }
+
+    float restFrequencyTimer = 0;
+    float restDurationTimer = 0;
+    void Rest()
+    {
+        if (statsRef.movingStats.restFrequency > 0)
+        {
+            if (restFrequencyTimer < statsRef.movingStats.restFrequency)
+            {
+                restFrequencyTimer += Time.deltaTime;
+                restDurationTimer = 0;
+            }
+            else
+            {
+                statsRef.movingStats.canMove = false;
+                restDurationTimer += Time.deltaTime;
+                if (restDurationTimer > statsRef.movingStats.restDuration)
+                {
+                    statsRef.movingStats.canMove = true;
+                    restFrequencyTimer = 0;
+                }
+            }
         }
     }
 

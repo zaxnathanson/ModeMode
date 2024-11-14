@@ -48,7 +48,7 @@ public class Stats : MonoBehaviour
     public struct EnemyHealth
     {
         public Sprite icon;
-        public string script;
+        public Upgrade script;
         public float maxHealth;
         public float currentHealth;
         public DamageNumber damageNumber;
@@ -94,7 +94,8 @@ public class Stats : MonoBehaviour
         public float damage;
         public bool doesFly;
         public bool doesFlip;
-
+        public float restFrequency;
+        public float restDuration;
 
     }
 

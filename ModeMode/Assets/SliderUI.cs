@@ -14,7 +14,7 @@ public class SliderUI : MonoBehaviour
         playerStats = GameObject.FindWithTag("Player").GetComponent<Stats>();
     }
 
-    // Update is called once per frame
+    // CallUpdate is called once per frame
     void Update()
     {
         slider.value = playerStats.playerSpecific.currentExp / playerStats.playerSpecific.expCurve.Evaluate(playerStats.playerSpecific.currentLevel);

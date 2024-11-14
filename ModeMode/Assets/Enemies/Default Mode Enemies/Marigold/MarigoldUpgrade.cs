@@ -1,31 +1,38 @@
+using DamageNumbersPro;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Upgrades/MarigoldUpgrade")]
 public class MarigoldUpgrade : Upgrade
 {
     PlayerShooting playerShooting;
-    float refundChance = 10;
-     
-    void OnEnable()
-    {
-        playerShooting = GetComponent<PlayerShooting>();
-        statsRef = GetComponent<Stats>();
-    }
+    [SerializeField] float refundChance = 10;
 
-    // Update is called once per frame
-    void Update()
+    public override void Setup(UpgradeHandler ctx)
     {
+
+        base.Setup(ctx);
+
+        statsRef = upgradeHandler.gameObject.GetComponent<Stats>();
+
+        playerShooting = upgradeHandler.gameObject.GetComponent<PlayerShooting>();
         playerShooting.playerShoot += ChanceBullet;
     }
 
+
     void ChanceBullet()
     {
-        Debug.Log("chancebullet");
-        if (Random.Range(0f,100f)/statsRef.luck <= refundChance)
+        for (int i = 0; i <= upgradeHandler.GetUpgradeOfType(this).amount; i++)
         {
-            effectText.Spawn(transform.position);
-            statsRef.shootingStats.ammo++;
+            if (Random.Range(0f, 100f) / statsRef.luck <= refundChance)
+            {
+                Vector3 spawnPos = upgradeHandler.gameObject.transform.position + new Vector3(0, 1, 0);
+                DamageNumber newDNP = effectText.Spawn(spawnPos, upgradeHandler.gameObject.transform);
+                newDNP.leftText = "Refund!";
+                statsRef.shootingStats.ammo++;
+            }
         }
+
     }
 }

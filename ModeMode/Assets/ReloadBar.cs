@@ -18,7 +18,7 @@ public class ReloadBar : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // CallUpdate is called once per frame
     void Update()
     {
         if (playerShootingScript.reloadTimer >= 1/playerStats.shootingStats.reloadSpeed || playerShootingScript.reloadTimer ==0)

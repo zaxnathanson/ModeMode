@@ -2,13 +2,14 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class UpgradePickup : MonoBehaviour
 {
-    string upgradeScript;
+    Upgrade upgradeScript;
     bool collected = false;
     GameObject targetPlayer;
     [SerializeField] float movementSpeedIncrease;
@@ -27,7 +28,7 @@ public class UpgradePickup : MonoBehaviour
         rb.AddForce(direction * Random.Range(-sideForce, sideForce), ForceMode.Impulse);
     }
 
-    public void Setup(Sprite sprite, string upgradeScriptRef)
+    public void Setup(Sprite sprite, Upgrade upgradeScriptRef)
     {
         Debug.Log("Setup");
         spriteRenderer.sprite = sprite;
@@ -45,16 +46,16 @@ public class UpgradePickup : MonoBehaviour
     void Collect(GameObject player)
     {
         EffectManager.instance.StartCoroutine(EffectManager.instance.ScreenFade(Color.white, 0.2f, 0f, 0.05f, 0.05f));
-        if (player.GetComponent(Type.GetType(upgradeScript)) == null)
+        UpgradeHandler upgradeHandlerRef = player.GetComponent<UpgradeHandler>();
+        if (!upgradeHandlerRef.CheckContainerForType(upgradeScript))
         {
-            player.AddComponent(Type.GetType(upgradeScript));
+            upgradeHandlerRef.AddUpgrade(upgradeScript);    
         }
         else
         {
-            Upgrade u = player.GetComponent(Type.GetType(upgradeScript)) as Upgrade;
-            u.numOfUpgrade++;
+            upgradeHandlerRef.GetUpgradeOfType(upgradeScript).amount++;
         }
-        Destroy(gameObject, 0.1f);
+        Destroy(gameObject);
 
     }
 

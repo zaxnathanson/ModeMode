@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226e8457b557c3d41b610311fae38931, type: 3}
+  m_Name: FlowerUpgrade
+  m_EditorClassIdentifier: 
+  numOfUpgrade: 0
+  statsRef: {fileID: 0}
+  effectText: {fileID: 0}
+  currentNumUpgrades: 0
+  AttackSpeedIncrease: 0.8
+  eAttackSpeedIncrease: 0.5
