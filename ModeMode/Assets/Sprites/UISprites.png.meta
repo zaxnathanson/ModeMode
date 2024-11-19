@@ -613,6 +613,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UISprites_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfd2710370e300548b530601fc6a8bfb
+      internalID: 1440642729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -641,6 +662,7 @@ TextureImporter:
       UISprites_21: -1933580491
       UISprites_22: 1926791055
       UISprites_23: 1020595907
+      UISprites_24: 1440642729
       UISprites_3: 122183500
       UISprites_4: -505447104
       UISprites_5: -142889679

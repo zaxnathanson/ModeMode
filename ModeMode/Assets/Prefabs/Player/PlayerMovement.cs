@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetTrigger("RollRight");
         }
-        Vector2 fakeDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 fakeDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         float elapsed = 0;
         Vector3 startPos = transform.position;
         while (elapsed < stats.dashingStats.TimeToComplete)
@@ -89,17 +89,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
-        if (Input.GetAxis("Vertical") != 0)
+        if (Input.GetAxisRaw("Vertical") != 0)
         {
-            direction.y = Mathf.MoveTowards(direction.y, Input.GetAxis("Vertical"), stats.movingStats.acceleration * Time.deltaTime);
+            direction.y = Mathf.MoveTowards(direction.y, Input.GetAxisRaw("Vertical"), stats.movingStats.acceleration * Time.deltaTime);
         }
         else
         {
             direction.y = Mathf.MoveTowards(direction.y, 0, stats.movingStats.decceleration * Time.deltaTime);
         }
-        if (Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxisRaw("Horizontal") != 0)
         {
-            direction.x = Mathf.MoveTowards(direction.x, Input.GetAxis("Horizontal"), stats.movingStats.acceleration * Time.deltaTime);
+            direction.x = Mathf.MoveTowards(direction.x, Input.GetAxisRaw("Horizontal"), stats.movingStats.acceleration * Time.deltaTime);
         }
         else
         {

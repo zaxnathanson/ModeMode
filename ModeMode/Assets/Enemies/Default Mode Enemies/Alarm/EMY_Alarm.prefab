@@ -74,6 +74,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -806199944, guid: 0a349cdb442ee294c8b006a13b1e91e7,
         type: 3}
+    - target: {fileID: 4808171843857410451, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1889e0a98ec33c4e95f76cf3c367792, type: 2}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.icon

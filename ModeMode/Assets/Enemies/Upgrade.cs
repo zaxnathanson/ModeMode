@@ -8,6 +8,8 @@ public abstract class Upgrade : ScriptableObject
 {
     public Stats statsRef;
     public DamageNumber effectText;
+    public string toolTip;
+
     [HideInInspector]protected UpgradeHandler upgradeHandler;
 
     public virtual void CallUpdate(float deltaTime) { }
