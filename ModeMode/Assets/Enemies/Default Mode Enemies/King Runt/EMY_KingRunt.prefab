@@ -109,8 +109,9 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.script
-      value: KingRuntUpgrade
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: d7b1fcbc1fe6ed44aa52c6ec9b5d5c4b,
+        type: 2}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: shootingStats.size

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d493083664aed14fbce0a1c65a5306c, type: 3}
   m_Name: GoldKeyUpgrade
   m_EditorClassIdentifier: 
-  numOfUpgrade: 1
   statsRef: {fileID: 0}
   effectText: {fileID: 0}
-  currentNumUpgrades: 1
+  toolTip: Increase current attack by <color=#fbf236>15% <color=#696a6a>(+10% per
+    stack)
+  enemySprite: {fileID: 1188191153, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
+  icon: {fileID: -2053255747, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
   AttackMultiplier: 1.15
   eAttackMultiplier: 1.1

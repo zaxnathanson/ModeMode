@@ -46,14 +46,9 @@ public class UpgradePickup : MonoBehaviour
     {
         EffectManager.instance.StartCoroutine(EffectManager.instance.ScreenFade(Color.white, 0.2f, 0f, 0.05f, 0.05f));
         UpgradeHandler upgradeHandlerRef = player.GetComponent<UpgradeHandler>();
-        if (!upgradeHandlerRef.CheckContainerForType(upgradeScript))
-        {
-            upgradeHandlerRef.AddUpgrade(upgradeScript);    
-        }
-        else
-        {
-            upgradeHandlerRef.GetUpgradeOfType(upgradeScript).amount++;
-        }
+        upgradeHandlerRef.AddUpgrade(upgradeScript);
+
+
         Destroy(gameObject);
 
     }

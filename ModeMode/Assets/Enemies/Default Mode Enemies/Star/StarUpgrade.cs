@@ -14,7 +14,6 @@ public class StarUpgrade : Upgrade
         currentNumUpgrades = 0;
 
         base.Setup(ctx);
-        Debug.Log("lol");
         statsRef = upgradeHandler.gameObject.GetComponent<Stats>();
 
         statsRef.playerSpecific.expMultiplier += expIncrease;

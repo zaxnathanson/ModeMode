@@ -12,14 +12,28 @@ public class UpgradeHandler : MonoBehaviour
 {
     [SerializeField]
     public List<UpgradeContainer> upgrades = new();
-
+    
+    public delegate void UpgradeGet(Upgrade upgrade);
+    public UpgradeGet addUpgradeEvent;
     public void AddUpgrade(Upgrade upgradeToAdd)
     {
-        UpgradeContainer newUpgrade = new();
-        newUpgrade.upgrade = upgradeToAdd;
-        newUpgrade.amount = 0;
-        upgrades.Add(newUpgrade);
-        newUpgrade.upgrade.Setup(this);
+
+        if (!CheckContainerForType(upgradeToAdd))
+        {
+            UpgradeContainer newUpgrade = new();
+            newUpgrade.upgrade = upgradeToAdd;
+            newUpgrade.amount = 0;
+            upgrades.Add(newUpgrade);
+            newUpgrade.upgrade.Setup(this);
+
+        }
+        else
+        {
+            GetUpgradeOfType(upgradeToAdd).amount++;
+        }
+
+        addUpgradeEvent?.Invoke(upgradeToAdd);
+
     }
     private void Update()
     {

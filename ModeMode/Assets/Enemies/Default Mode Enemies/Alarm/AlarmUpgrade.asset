@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsRef: {fileID: 0}
   effectText: {fileID: 0}
-  AttackSpeedBonusDuration: 0.4
+  toolTip: After reloading, gain <color=#fbf236>50% <color=#696a6a>(+30% per stack)
+    <color="white">attack speed for half a second.
+  enemySprite: {fileID: -806199944, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
+  icon: {fileID: 554706140, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
+  AttackSpeedBonusDuration: 0.5
   AttackSpeedBonusIncrease: 1.5
   eAttackSpeedBonusIncrease: 0.3

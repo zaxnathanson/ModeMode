@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b3ed8664defd049a29be39a6b91cdc, type: 3}
   m_Name: HeartUpgrade
   m_EditorClassIdentifier: 
-  numOfUpgrade: 0
   statsRef: {fileID: 0}
   effectText: {fileID: 0}
+  toolTip: Heal <color=#fbf236>3 <color="white>Health
+  enemySprite: {fileID: -224000183, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
+  icon: {fileID: -1396137509, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
   HealingAmount: 3

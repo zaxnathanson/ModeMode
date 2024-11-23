@@ -13,6 +13,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] AnimationCurve enemyAmountCurve;
     [SerializeField] AnimationCurve enemyScreenMax;
     [SerializeField] AnimationCurve spawnCooldownCurve;
+    [SerializeField] AnimationCurve enemyHealthIncrease;
     [SerializeField] public AnimationCurve expMultiplier;
     public int wave;
     float spawnTimer = 0;
@@ -140,7 +141,7 @@ public class WaveManager : MonoBehaviour
             }
         }
 
-        Instantiate(currentMode.foundational[enemyIndex].unit, spawnLocation, Quaternion.identity, enemyContainer);
+        InstantiateAndSetupEnemy(currentMode.foundational[enemyIndex].unit, spawnLocation);
 
     }
 
@@ -189,7 +190,16 @@ public class WaveManager : MonoBehaviour
         } while (currentMode.other[enemyIndex].firstWave > wave);
 
 
-        Instantiate(currentMode.other[enemyIndex].unit, spawnLocation, Quaternion.identity, enemyContainer);
+        InstantiateAndSetupEnemy(currentMode.other[enemyIndex].unit, spawnLocation);
+
+    }
+
+    void InstantiateAndSetupEnemy(GameObject enemy, Vector3 spawnLocation)
+    {
+        GameObject newEnemy = Instantiate(enemy, spawnLocation, Quaternion.identity, enemyContainer);
+        Stats newEnemyStats = newEnemy.GetComponent<Stats>();
+        newEnemyStats.enemyHealth.maxHealth *= enemyHealthIncrease.Evaluate(wave);
+        newEnemyStats.enemyHealth.currentHealth = newEnemyStats.enemyHealth.maxHealth;
 
     }
 }

@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsRef: {fileID: 0}
   effectText: {fileID: 0}
+  toolTip: Gain a <color=#fbf236>10% <color=#696a6a>(+10% per stack) <color="white">increase
+    to exp gained.
+  enemySprite: {fileID: -531795000, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
+  icon: {fileID: -1553827623, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
   expIncrease: 0.1
   eExpIncrease: 0.1
