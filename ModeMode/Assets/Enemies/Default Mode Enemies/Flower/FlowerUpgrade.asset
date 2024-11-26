@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsRef: {fileID: 0}
   effectText: {fileID: 0}
-  toolTip: Gain a <color=#fbf236>0.8 <color=#696a6a>(+0.5 per stack) <color="white">increase
+  toolTip: Gain a <color=#fbf236>0.5 <color=#696a6a>(+0.25 per stack) <color="white">increase
     to attack speed.
   enemySprite: {fileID: -1635492834, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
   icon: {fileID: 1289775181, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
-  AttackSpeedIncrease: 0.8
-  eAttackSpeedIncrease: 0.5
+  AttackSpeedIncrease: 0.5
+  eAttackSpeedIncrease: 0.25

@@ -174,6 +174,7 @@ MonoBehaviour:
   exp: {fileID: 9060492564570091574, guid: f47f9c0b37aa88d43962e30c5bdd67a3, type: 3}
   upgradeCapasulePrefab: {fileID: 4666218056008338421, guid: a336a09dafb5cc245b5def8bbee26974,
     type: 3}
+  luck: 0
   playerSpecific:
     currentExp: 0
     expCurve:
@@ -190,7 +191,7 @@ MonoBehaviour:
     capsuleSpeed: 0
   enemyHealth:
     icon: {fileID: -1077429661, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
-    script: 
+    script: {fileID: 0}
     maxHealth: 0
     currentHealth: 0
     damageNumber: {fileID: 8687796540153562812, guid: e4ddc0061c80ca245b895bb1fa84c396,
@@ -201,7 +202,7 @@ MonoBehaviour:
     cameraShakeStrength: 0.5
     cameraShakeVibrato: 5
     deathGameobject: {fileID: 0}
-    baseExpAmount: 0
+    baseExpAmount: 1
   playerHealth:
     maxHealth: 0
     currentHealth: 0
@@ -221,6 +222,8 @@ MonoBehaviour:
     damage: 1
     doesFly: 0
     doesFlip: 1
+    restFrequency: 0
+    restDuration: 0
   shootingStats:
     bulletPrefab: {fileID: 2130791715930021335, guid: bd3eba4869fd8b942821802c723e9c4c,
       type: 3}

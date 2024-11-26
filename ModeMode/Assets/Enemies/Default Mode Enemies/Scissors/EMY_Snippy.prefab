@@ -82,7 +82,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: doesShoot
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -90,6 +90,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1328960278, guid: 4f39c4ce80cb3de4a962f2d542d47044,
         type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: enemyHealth.script
+      value: 
+      objectReference: {fileID: 11400000, guid: bee8066de79dc9f4e8229bb90275a579,
+        type: 2}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: shootingStats.size
@@ -128,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: movingStats.maxSpeed
-      value: 4.2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -148,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: shootingStats.lifetime
-      value: 2
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -163,12 +169,12 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: dashingStats.startupTime
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: movingStats.acceleration
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -183,12 +189,12 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: dashingStats.dashCooldown
-      value: 0.42
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.baseExpAmount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -198,7 +204,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: movingStats.decceleration
-      value: 1
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -213,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: dashingStats.TimeToComplete
-      value: 0.22
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -221,6 +227,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2099141342648631360, guid: 026812d7c732e424788aec719581ca31,
         type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: shootingStats.shootAtPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: dashingStats.forwardRotationOffset
@@ -234,6 +245,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6166325936397519710}
+    - targetCorrespondingSourceObject: {fileID: 3274831666054252852, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6717260613389651859}
   m_SourcePrefab: {fileID: 100100000, guid: 94f92c178cc094648a30c000c1d155b5, type: 3}
 --- !u!95 &1048910494252875727 stripped
 Animator:
@@ -269,6 +284,20 @@ MonoBehaviour:
   animator: {fileID: 1048910494252875727}
   agent: {fileID: 4352599410324110881}
   sprites: {fileID: 7829378381314182493}
+  isDashing: 1
+--- !u!114 &6717260613389651859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560645251526190379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e938b38832f3342b1d3fd8f426e1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnFrequency: 0.67
 --- !u!4 &7829378381314182493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9124198949145403714, guid: 94f92c178cc094648a30c000c1d155b5,

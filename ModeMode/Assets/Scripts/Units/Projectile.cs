@@ -53,6 +53,53 @@ public class Projectile : MonoBehaviour
         rb.AddForce(Random.Range(statsRef.shotSpeedMin, statsRef.shotSpeedMax) * new Vector3(transform.right.x, 0, -transform.right.z) + addedForce, ForceMode.Impulse);
     }
 
+    public void SetupBullet(Stats.ShootingStats shootingStats, float rotation, int shotNum, Vector3 addedForce, bool isStationary, float lifetime)
+    {
+        statsRef = shootingStats;
+        transform.localScale = Vector3.one * shootingStats.size;
+
+        if (shootingStats.shootAtPlayer)
+        {
+            transform.rotation = Quaternion.Euler(0, rotation + Random.Range(-statsRef.spread, statsRef.spread) + statsRef.bulletAngles[shotNum], 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, Random.Range(-statsRef.spread, statsRef.spread) + statsRef.bulletAngles[shotNum], 0);
+        }
+
+        startPos = transform.position;
+
+        //calculate critical strike
+        if (Random.Range(0f, 100f) <= statsRef.critChance)
+        {
+            isCritical = true;
+        }
+        if (isCritical)
+        {
+            statsRef.damage *= statsRef.critDamage / 100;
+        }
+
+        //set color of materials
+        MaterialPropertyBlock propertyBlock = new MaterialPropertyBlock();
+        propertyBlock.SetColor("_Color", statsRef.outsideColor);
+        propertyBlock.SetColor("_BaseColor", statsRef.insideColor);
+        mr.SetPropertyBlock(propertyBlock);
+
+        shadow.size = new Vector3(transform.localScale.x, transform.localScale.y, shadow.size.z);
+
+        //launches bullet
+        if (!isStationary)
+        {
+            rb.AddForce(Random.Range(statsRef.shotSpeedMin, statsRef.shotSpeedMax) * new Vector3(transform.right.x, 0, -transform.right.z) + addedForce, ForceMode.Impulse);
+        }
+        else
+        {
+            statsRef.lifetime = lifetime;
+
+        }
+    }
+
+
     private void LateUpdate()
     {
         
@@ -74,6 +121,7 @@ public class Projectile : MonoBehaviour
             lifeTimer += Time.deltaTime;
             if (lifeTimer > statsRef.lifetime)
             {
+
                 StartCoroutine(Destroy());
             }
         }

@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
+using static WaveManager;
 
 public class EnemyDashing : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class EnemyDashing : MonoBehaviour
     float dashSpeedTimer = 0;
     int dashesBursted = 0;
     bool canDash = true;
+    public bool isDashing = false;
+
+
+
     void Awake()
     {
         player = GameObject.FindWithTag("Player");
@@ -45,7 +50,6 @@ public class EnemyDashing : MonoBehaviour
                     dashesBursted++;
 
                     StartCoroutine(Dash());
-
                 }
                 else
                 {
@@ -86,9 +90,10 @@ public class EnemyDashing : MonoBehaviour
         }
         yield return dashTween.WaitForCompletion();
 
-
+        isDashing = true;
         dashTween = transform.DOMove(targetPosition, statsRef.dashingStats.TimeToComplete);
         yield return dashTween.WaitForCompletion();
+        isDashing = false;
 
         dashTween = sprites.transform.DOLocalRotate(new Vector3(45, 0, 0), statsRef.dashingStats.endTime, RotateMode.Fast);
         yield return dashTween.WaitForCompletion();

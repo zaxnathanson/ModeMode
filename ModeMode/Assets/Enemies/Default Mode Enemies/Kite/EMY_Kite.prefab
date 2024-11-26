@@ -94,17 +94,18 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHealth.icon
       value: 
-      objectReference: {fileID: -1553827623, guid: 4f39c4ce80cb3de4a962f2d542d47044,
+      objectReference: {fileID: -968241683, guid: 4f39c4ce80cb3de4a962f2d542d47044,
         type: 3}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.script
-      value: KiteUpgrade
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: f3f3e2439be10c04f8e53fbc7402756c,
+        type: 2}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: movingStats.maxSpeed
-      value: 11.5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -119,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.baseExpAmount
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}

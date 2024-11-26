@@ -99,8 +99,9 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.script
-      value: DinofuckUpgrade
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: ea9ff245ac918fb42b49446da580a2c2,
+        type: 2}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: shootingStats.size
@@ -159,7 +160,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.baseExpAmount
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}

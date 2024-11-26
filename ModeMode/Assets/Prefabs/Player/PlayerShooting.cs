@@ -12,7 +12,6 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] SpriteRenderer weaponSprite;
     float gunStartPosX;
     [SerializeField] GameObject weapon;
-    [SerializeField] GameObject projectileSpawn;
     float rotationZ;
 
     [HideInInspector] public float reloadTimer = 0;
@@ -65,8 +64,10 @@ public class PlayerShooting : MonoBehaviour
 
 
                 playerShoot?.Invoke();
-
-                SpawnBullet();
+                for (int i = 0; i < statsRef.shootingStats.bulletsPerShot; i++)
+                {
+                    SpawnBullet(i);
+                }
             }
 
         }
@@ -82,18 +83,18 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    public void SpawnBullet()
+    public void SpawnBullet(int shotNum)
     {
-        Vector3 spawnPos = new Vector3(projectileSpawn.transform.position.x, 0, projectileSpawn.transform.position.z);
+        Vector3 spawnPos = new Vector3(statsRef.shootingStats.projectileSpawn[shotNum].transform.position.x, 0, statsRef.shootingStats.projectileSpawn[shotNum].transform.position.z);
         
         if (statsRef.shootingStats.shootParticle != null)
         {
-            Instantiate(statsRef.shootingStats.shootParticle, projectileSpawn.transform.position, projectileSpawn.transform.rotation, transform);
+            Instantiate(statsRef.shootingStats.shootParticle, statsRef.shootingStats.projectileSpawn[shotNum].transform.position, statsRef.shootingStats.projectileSpawn[shotNum].transform.rotation, transform);
         }
         
         GameObject newProjectile = Instantiate(statsRef.shootingStats.bulletPrefab, spawnPos, Quaternion.identity);
         Projectile projectileScript = newProjectile.GetComponent<Projectile>();
 
-        projectileScript.SetupBullet(statsRef.shootingStats, rotationZ, 0, Vector3.zero);
+        projectileScript.SetupBullet(statsRef.shootingStats, rotationZ, shotNum, Vector3.zero);
     }
 }

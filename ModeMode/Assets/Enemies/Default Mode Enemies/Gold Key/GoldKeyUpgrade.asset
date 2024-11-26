@@ -18,5 +18,5 @@ MonoBehaviour:
     stack)
   enemySprite: {fileID: 1188191153, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
   icon: {fileID: -2053255747, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
-  AttackMultiplier: 1.15
-  eAttackMultiplier: 1.1
+  AttackMultiplier: 1.1
+  eAttackMultiplier: 1.05

@@ -21,6 +21,7 @@ public abstract class Upgrade : ScriptableObject
     public virtual void Setup(UpgradeHandler ctx)
     {
         upgradeHandler = ctx;
+        statsRef = upgradeHandler.gameObject.GetComponent<Stats>();
     }
 }
 

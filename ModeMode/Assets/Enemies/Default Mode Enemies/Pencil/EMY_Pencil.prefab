@@ -157,7 +157,7 @@ PrefabInstance:
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: enemyHealth.baseExpAmount
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
@@ -222,6 +222,7 @@ MonoBehaviour:
   animator: {fileID: 1048910494252875727}
   agent: {fileID: 4352599410324110881}
   sprites: {fileID: 7829378381314182493}
+  isDashing: 0
 --- !u!4 &7829378381314182493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9124198949145403714, guid: 94f92c178cc094648a30c000c1d155b5,

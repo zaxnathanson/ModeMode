@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 direction = new Vector2(0,0);
     public bool isMoving;
     float startSpeed;
-    bool canRoll = true;
+    public bool canRoll = true;
     bool canMove = true;
     private void Start()
     {
