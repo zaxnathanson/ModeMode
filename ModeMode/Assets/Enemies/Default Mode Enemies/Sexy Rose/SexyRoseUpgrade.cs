@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Upgrades/Rose")]
-public class RoseUpgrade : Upgrade
+[CreateAssetMenu(menuName = "Upgrades/SexyRose")]
+public class SexyRoseUpgrade : Upgrade
 {
     int currentNumUpgrades = 0;
     public float sizeIncrease = 1.3f;
-    public float critChanceIncrease = 1;
-    public float eCritChanceIncrease = 1;
+    public float damageIncrease = 1;
+    public float edamageIncrease = 1;
 
 
     public override void Setup(UpgradeHandler ctx)
     {
         currentNumUpgrades = 0;
         base.Setup(ctx);
-        statsRef.shootingStats.critChance += critChanceIncrease;
+        statsRef.shootingStats.damage += damageIncrease;
         statsRef.shootingStats.size += sizeIncrease;
     }
 
@@ -30,6 +30,6 @@ public class RoseUpgrade : Upgrade
 
     void AddStat()
     {
-        statsRef.shootingStats.critChance += eCritChanceIncrease;
+        statsRef.shootingStats.damage += edamageIncrease;
     }
 }

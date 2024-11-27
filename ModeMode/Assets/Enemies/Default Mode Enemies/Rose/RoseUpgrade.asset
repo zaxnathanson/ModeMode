@@ -18,6 +18,6 @@ MonoBehaviour:
     <color=#696a6a>(+10% per stack) <color="white">Increase to crit chance '
   enemySprite: {fileID: 1177550092, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
   icon: {fileID: 1511480805, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
-  sizeIncrease: 1.5
+  sizeIncrease: 0.15
   critChanceIncrease: 10
   eCritChanceIncrease: 10

@@ -30,7 +30,10 @@ public class MarigoldUpgrade : Upgrade
                 Vector3 spawnPos = upgradeHandler.gameObject.transform.position + new Vector3(0, 1, 0);
                 DamageNumber newDNP = effectText.Spawn(spawnPos, upgradeHandler.gameObject.transform);
                 newDNP.leftText = "Refund!";
-                statsRef.shootingStats.ammo++;
+                if (statsRef.shootingStats.ammo < statsRef.shootingStats.maxAmmo)
+                {
+                    statsRef.shootingStats.ammo++;
+                }
             }
         }
 

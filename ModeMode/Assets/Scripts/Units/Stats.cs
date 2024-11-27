@@ -19,7 +19,9 @@ public class Stats : MonoBehaviour
     public Material hitMaterial;
     public GameObject hitParticle;
     public SpriteRenderer spriteRenderer;
+    public bool hitInvincible;
     public bool isInvincible;
+
     public GameObject exp;
     public GameObject upgradeCapasulePrefab;
     public float luck;
@@ -187,6 +189,8 @@ public class Stats : MonoBehaviour
         public float burstSpeed;
     }
 
+    public delegate void GotHit();
+    public GotHit myGotHitEvent;
 
     private void Update()
     {
@@ -253,61 +257,66 @@ public class Stats : MonoBehaviour
 
     public IEnumerator TakeDamage(float damage, bool isCritical)
     {
-        if (!isInvincible)
+        if (!hitInvincible)
         {
-            switch (unitType)
+            myGotHitEvent?.Invoke();
+            if (!isInvincible)
             {
-                case UnitType.enemy:
+                switch (unitType)
+                {
+                    case UnitType.enemy:
 
-                    enemyHealth.currentHealth -= damage;
+                        enemyHealth.currentHealth -= damage;
 
-                    if (hitParticle != null)
-                    {
-                        Instantiate(hitParticle, transform.position, Quaternion.identity);
-                    }
+                        if (hitParticle != null)
+                        {
+                            Instantiate(hitParticle, transform.position, Quaternion.identity);
+                        }
 
-                    spriteRenderer.material = hitMaterial;
-                    yield return new WaitForSeconds(0.1f);
-                    spriteRenderer.material = normalMaterial;
+                        spriteRenderer.material = hitMaterial;
+                        yield return new WaitForSeconds(0.1f);
+                        spriteRenderer.material = normalMaterial;
 
-                    if (isCritical)
-                    {
-                        Transform num = enemyHealth.critNumber.Spawn(transform.localPosition, damage).transform;
-                        num.position = new Vector3(num.position.x, 0, num.position.z);
-                    }
-                    else
-                    {
-                        Transform num = enemyHealth.damageNumber.Spawn(transform.localPosition, damage).transform;
-                        num.position = new Vector3(num.position.x, 0, num.position.z);
-                    }
+                        if (isCritical)
+                        {
+                            Transform num = enemyHealth.critNumber.Spawn(transform.localPosition, damage).transform;
+                            num.position = new Vector3(num.position.x, 0, num.position.z);
+                        }
+                        else
+                        {
+                            Transform num = enemyHealth.damageNumber.Spawn(transform.localPosition, damage).transform;
+                            num.position = new Vector3(num.position.x, 0, num.position.z);
+                        }
 
-                    break;
+                        break;
 
-                case UnitType.player:
+                    case UnitType.player:
 
-                    playerHealth.currentHealth -= (int)damage;
-                    EffectManager.instance.CameraShake(playerHealth.hitShakeDuration, playerHealth.hitShakeStrength, playerHealth.hitShakeVibrato);
+                        playerHealth.currentHealth -= (int)damage;
+                        EffectManager.instance.CameraShake(playerHealth.hitShakeDuration, playerHealth.hitShakeStrength, playerHealth.hitShakeVibrato);
 
-                    StartCoroutine(EffectManager.instance.CameraZoom(0.4f, 0.5f));
+                        StartCoroutine(EffectManager.instance.CameraZoom(0.4f, 0.5f));
 
-                    isInvincible = true;
+                        hitInvincible = true;
                     
-                    if (hitParticle != null)
-                    {
-                        Instantiate(hitParticle, transform.position, Quaternion.identity);
-                    }
-                    spriteRenderer.material = hitMaterial;
+                        if (hitParticle != null)
+                        {
+                            Instantiate(hitParticle, transform.position, Quaternion.identity);
+                        }
+                        spriteRenderer.material = hitMaterial;
 
-                    yield return new WaitForSeconds(0.2f);
+                        yield return new WaitForSeconds(0.2f);
 
-                    spriteRenderer.material = normalMaterial;
+                        spriteRenderer.material = normalMaterial;
 
-                    yield return new WaitForSeconds(0.2f);
+                        yield return new WaitForSeconds(0.2f);
 
-                    isInvincible = false;
+                        hitInvincible = false;
 
-                    break;
+                        break;
+                }
             }
+
 
 
         }
