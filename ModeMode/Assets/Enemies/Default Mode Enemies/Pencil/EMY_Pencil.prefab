@@ -91,6 +91,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: enemyHealth.icon
+      value: 
+      objectReference: {fileID: 1470072503, guid: 4f39c4ce80cb3de4a962f2d542d47044,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: enemyHealth.script
+      value: 
+      objectReference: {fileID: 11400000, guid: 50c8c59b7f606884dbac86d57dc372e5,
+        type: 2}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: dashingStats.Damage
       value: 1
       objectReference: {fileID: 0}

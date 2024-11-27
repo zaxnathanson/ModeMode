@@ -81,6 +81,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: enemyHealth.icon
+      value: 
+      objectReference: {fileID: 1312407466, guid: 4f39c4ce80cb3de4a962f2d542d47044,
+        type: 3}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
+      propertyPath: enemyHealth.script
+      value: 
+      objectReference: {fileID: 11400000, guid: 00cf1e4b9826b2240b8f33409636fdb5,
+        type: 2}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: shootingStats.size
       value: 0.27
       objectReference: {fileID: 0}

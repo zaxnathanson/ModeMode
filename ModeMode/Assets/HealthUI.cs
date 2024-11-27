@@ -9,13 +9,15 @@ public class HealthUI : MonoBehaviour
     [SerializeField] GameObject healthUIObject;
     Stats statsRef;
     int uiHealth;
+    int uiMaxHealth;
+
     void Start()
     {
         statsRef = GameObject.FindWithTag("Player").GetComponent<Stats>();
 
         ChangeTotalHearts();
         uiHealth = statsRef.playerHealth.maxHealth;
-
+        uiMaxHealth = statsRef.playerHealth.maxHealth;
         ChangeHealth();
     }
 
@@ -53,10 +55,18 @@ public class HealthUI : MonoBehaviour
     }
     void Update()
     {
+        if (uiMaxHealth != statsRef.playerHealth.maxHealth)
+        {
+            ChangeTotalHearts();
+        }
+        uiMaxHealth = statsRef.playerHealth.maxHealth;
+
         if (uiHealth != statsRef.playerHealth.currentHealth)
         {
             ChangeHealth();
         }
         uiHealth = statsRef.playerHealth.currentHealth;
+
+
     }
 }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2ac0bd9ccf95d4b9cabe43520a9b2c, type: 3}
+  m_Name: PantsUpgrade
+  m_EditorClassIdentifier: 
+  statsRef: {fileID: 0}
+  effectText: {fileID: 0}
+  toolTip: Gain a <color=#fbf236>0.25 <color=#696a6a>(+0.25 per stack) <color="white">increase
+    to movement speed. with shirt upgrade, gain <color=#fbf236>1 <color="white">max
+    health.
+  enemySprite: {fileID: 1621261761, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
+  icon: {fileID: 1312407466, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
+  movementIncrease: 0.25
+  eMovementIncrease: 0.25
+  shirtUpgrade: {fileID: 11400000, guid: ba4bee6500be60b4ba97716c84a1555c, type: 2}

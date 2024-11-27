@@ -89,7 +89,8 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyHealth.script
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: c2d6ba616d6ca6442b61891b17488f06,
+        type: 2}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
       propertyPath: shootingStats.size

@@ -92,6 +92,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
         type: 3}
+      propertyPath: enemyHealth.script
+      value: 
+      objectReference: {fileID: 11400000, guid: c7b2860d989c80d4a8386c0ad5778f58,
+        type: 2}
+    - target: {fileID: 6958705341685066409, guid: 94f92c178cc094648a30c000c1d155b5,
+        type: 3}
       propertyPath: dashingStats.Damage
       value: 1
       objectReference: {fileID: 0}

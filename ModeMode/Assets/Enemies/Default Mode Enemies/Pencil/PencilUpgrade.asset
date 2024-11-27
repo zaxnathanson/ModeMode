@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637e672c18b0e36409b7dc2099784ca1, type: 3}
+  m_Name: PencilUpgrade
+  m_EditorClassIdentifier: 
+  statsRef: {fileID: 0}
+  effectText: {fileID: 0}
+  toolTip: Your bullets pierce through <color=#fbf236>1 <color=#696a6a>(+1 per stack)
+    <color="white">enemies.
+  enemySprite: {fileID: -1066371996, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
+  icon: {fileID: 1470072503, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
+  PierceIncrease: 1
+  ePierceIncrease: 1

@@ -405,15 +405,15 @@ MonoBehaviour:
   movementSpeedIncrease: 35
   movementSpeed: 1
   rb: {fileID: 3921028256285559191}
-  collectionDistance: 1.8
+  collectionDistance: 1.3
   expGet: {fileID: 2099141342648631360, guid: f188674af2884c940a2f10ccb066c918, type: 3}
   expCollected: {fileID: 9130869072793025794, guid: a4c7e571f2440d84fb9683b2912c3e1b,
     type: 3}
   upForceMax: 7
   upForceMin: 4
   sideForce: 1.2
-  lifetime: 8
-  warningLifetime: 5
+  lifetime: 4
+  warningLifetime: 2
   Amount: 0
   large: {fileID: 1230953088, guid: f2765421bdef3054a922750f2f5248ed, type: 3}
   medium: {fileID: 1724154649, guid: f2765421bdef3054a922750f2f5248ed, type: 3}
