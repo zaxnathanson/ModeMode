@@ -17,6 +17,7 @@ public class UpgradeHandler : MonoBehaviour
     public UpgradeGet addUpgradeEvent;
     public void AddUpgrade(Upgrade upgradeToAdd)
     {
+        GameController.instance.totalUpgrades++;
 
         if (!CheckContainerForType(upgradeToAdd))
         {
@@ -33,8 +34,9 @@ public class UpgradeHandler : MonoBehaviour
         }
 
         addUpgradeEvent?.Invoke(upgradeToAdd);
-
     }
+
+
     private void Update()
     {
         foreach (UpgradeContainer upgradeContainer in upgrades)

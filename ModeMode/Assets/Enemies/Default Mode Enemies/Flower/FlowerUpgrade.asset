@@ -19,4 +19,4 @@ MonoBehaviour:
   enemySprite: {fileID: -1635492834, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
   icon: {fileID: 1289775181, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
   AttackSpeedIncrease: 0.5
-  eAttackSpeedIncrease: 0.25
+  eAttackSpeedIncrease: 0.5

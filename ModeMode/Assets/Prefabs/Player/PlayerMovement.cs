@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody body;
     [SerializeField] Animator animator;
     [SerializeField] SpriteRenderer bodySprite;
+    [SerializeField] AudioPlayer audioPlayer;
+    [SerializeField] AudioClip dash;
     Vector2 direction = new Vector2(0,0);
     public bool isMoving;
     float startSpeed;
@@ -30,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     void RollInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.RightControl))
         {
             if (canRoll && isMoving)
             {
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         canRoll = false;
         canMove = false;
         animator.speed = 1 / stats.dashingStats.TimeToComplete;
+        audioPlayer.PlayAudio(dash);
         if (direction.x < 0)
         {
             animator.SetTrigger("RollLeft");

@@ -5,6 +5,7 @@ using NaughtyAttributes;
 using Unity.VisualScripting;
 using static Stats;
 using DamageNumbersPro;
+using DG.Tweening;
 
 public class Stats : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class Stats : MonoBehaviour
     public GameObject exp;
     public GameObject upgradeCapasulePrefab;
     public float luck;
+
+
+    public delegate void PlayerDied();
+    public PlayerDied playerDiedEvent;
 
 
     [ShowIf(nameof(unitType), UnitType.player)]
@@ -206,6 +211,7 @@ public class Stats : MonoBehaviour
     {
         if (gameObject.tag == "Player")
         {
+            GameController.instance.playerStats = this;
             WaveManager.Instance.nextWave += WaveHeal;
         }
     }
@@ -245,6 +251,9 @@ public class Stats : MonoBehaviour
     public void GetEXP(float baseAmount)
     {
         playerSpecific.currentExp += baseAmount * playerSpecific.expMultiplier;
+        spriteRenderer.color = Color.cyan;
+        spriteRenderer.DOComplete();
+        spriteRenderer.DOColor(Color.white, 0.45f);
     }
 
     void WaveHeal()
@@ -338,10 +347,17 @@ public class Stats : MonoBehaviour
             case UnitType.player:
                 if (playerHealth.currentHealth <= 0 && !isDead)
                 {
-                    StartCoroutine(Death());
+                    StartCoroutine(PlayerDeath());
                 }
                 break;
         }
+    }
+
+    IEnumerator PlayerDeath()
+    {
+        isDead = true;
+        playerDiedEvent?.Invoke();
+        yield return null;
     }
 
     IEnumerator Death()
@@ -362,7 +378,7 @@ public class Stats : MonoBehaviour
         {
             SpawnExp();
         }
-
+        GameController.instance.enemiesKilled++;
         Destroy(gameObject);
     }
 

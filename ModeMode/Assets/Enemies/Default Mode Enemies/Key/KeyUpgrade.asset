@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsRef: {fileID: 0}
   effectText: {fileID: 0}
-  toolTip: Gain a <color=#fbf236>0.3 <color=#696a6a>(+0.2 per stack) <color="white">increase
+  toolTip: Gain a <color=#fbf236>0.75 <color=#696a6a>(+0.5 per stack) <color="white">increase
     to damage.
   enemySprite: {fileID: 81457003, guid: 0a349cdb442ee294c8b006a13b1e91e7, type: 3}
   icon: {fileID: 951143831, guid: 4f39c4ce80cb3de4a962f2d542d47044, type: 3}
-  damageIncrease: 0.3
-  eDamageIncrease: 0.2
+  damageIncrease: 0.75
+  eDamageIncrease: 0.5

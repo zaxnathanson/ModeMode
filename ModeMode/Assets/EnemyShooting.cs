@@ -122,7 +122,6 @@ public class EnemyShooting : MonoBehaviour
 
     void SpawnBullet(int shotNum)
     {
-        Debug.Log("SpawnCapsule");
         Vector3 spawnPos = new Vector3(statsRef.shootingStats.projectileSpawn[shotNum].transform.position.x, 0, statsRef.shootingStats.projectileSpawn[shotNum].transform.position.z);
 
         if (statsRef.shootingStats.fixedBurst )

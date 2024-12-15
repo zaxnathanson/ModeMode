@@ -20,13 +20,11 @@ public class ExperiencePoint : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Animator animator;
 
-
     private void Awake()
     {
         targetPlayer = GameObject.FindWithTag("Player");
         rb.AddForce(transform.up * Random.Range(upForceMin, upForceMax), ForceMode.Impulse);
         Vector3 direction = new Vector3(Random.Range(0, 360), 0, Random.Range(0, 360)).normalized;
-        Debug.Log(direction);
         rb.AddForce(direction * Random.Range(-sideForce, sideForce), ForceMode.Impulse);
     }
 
